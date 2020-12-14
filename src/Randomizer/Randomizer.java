@@ -12,8 +12,7 @@ public class Randomizer {
     Random random = new Random();
     int min, max, count;
     int[] array = new int[max - min + 1];
-
-    //проверка
+    
     public void start() {
         System.out.println("Добро пожаловать в рандомайзер.");
         System.out.println("Введите минимальное число диапазона (От 1 до 500)");
