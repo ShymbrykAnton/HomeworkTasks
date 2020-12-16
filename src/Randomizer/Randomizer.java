@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Randomizer {
     // два исключения вводимое не того типа что нужно
-    // пользователь нверено написал комманду
     // учесть числа с плавающей точкой
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
@@ -17,7 +16,7 @@ public class Randomizer {
         System.out.println("Добро пожаловать в рандомайзер.");
         System.out.println("Введите минимальное число диапазона (От 1 до 500)");
 //        try {
-            min = scanner.nextInt();
+        min = scanner.nextInt();
 //        } catch (InputMismatchException exception) {
 //            System.out.println("Введенные вами символы  - не цифры");
 //            System.exit(0);
@@ -45,6 +44,7 @@ public class Randomizer {
         menu();
     }
 
+    // после цикла generate ов, чтобы чзапустить команду необходимо дважды ввести комманду (решить проблему)
     public void menu() {
         System.out.println("                         Главное меню");
         System.out.println("Введите одну из трех доступных комманд: \"generate\", \"help\", \"exit\"");
