@@ -1,5 +1,6 @@
 package Check;
 
+import Stars.DrawingStars;
 import hw2.RandomNumberGenerator;
 
 public class Main {
@@ -24,8 +25,11 @@ public class Main {
 //        GuessNumber guessNumber = new GuessNumber(5,1,100);
 //        guessNumber.start();
 
-        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-        randomNumberGenerator.getRandomTimesRandomValues();
+//        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+//        randomNumberGenerator.getRandomTimesRandomValues();
+
+        DrawingStars drawingStars = new DrawingStars();
+        drawingStars.drawRightBottomTriangle();
     }
 }
 
