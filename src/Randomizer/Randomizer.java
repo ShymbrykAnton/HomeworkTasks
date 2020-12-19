@@ -50,6 +50,8 @@ public class Randomizer {
         System.out.println("Введите одну из трех доступных комманд: \"generate\", \"help\", \"exit\"");
         scanner.nextLine();
         while (true) {
+            //добавить свитч кейс
+            // разобраться с фор ич для вывода значений
             String userCommand = scanner.nextLine();
             if (userCommand.equalsIgnoreCase("generate")) {
                 generate();

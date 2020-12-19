@@ -86,6 +86,7 @@ public class Arrays {
             array[startSwapIndex] = array[(array.length / 2) + startSwapIndex + notEvenLength];
             array[(array.length / 2) + startSwapIndex + notEvenLength] = rememberStart;
         }
+        // в случаях как здесь переделать под фор ич т е for (String value : array) sout (value)
         for (int i = 0; i < array.length; i++) {
             swappedStringArray += array[i] + " ";
         }

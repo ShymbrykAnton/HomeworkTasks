@@ -1,5 +1,6 @@
 package Check;
 
+import GuessNumber.GuessNumber;
 import Randomizer.Randomizer;
 import hw1.*;
 
@@ -19,8 +20,11 @@ public class Main {
 //        String result3 = arrays.swapFirstAndSecondPartOfArray(array);
 //        System.out.println(result3);
 
-        Randomizer randomizer = new Randomizer();
-        randomizer.start();
+//        Randomizer randomizer = new Randomizer();
+//        randomizer.start();
+
+        GuessNumber guessNumber = new GuessNumber();
+        guessNumber.start();
     }
 }
 
