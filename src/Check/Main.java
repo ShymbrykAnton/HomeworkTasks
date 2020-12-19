@@ -1,8 +1,6 @@
 package Check;
 
-import GuessNumber.GuessNumber;
-import Randomizer.Randomizer;
-import hw1.*;
+import hw2.RandomNumberGenerator;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,8 +21,11 @@ public class Main {
 //        Randomizer randomizer = new Randomizer();
 //        randomizer.start();
 
-        GuessNumber guessNumber = new GuessNumber(5,1,100);
-        guessNumber.start();
+//        GuessNumber guessNumber = new GuessNumber(5,1,100);
+//        guessNumber.start();
+
+        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+        randomNumberGenerator.getRandomTimesRandomValues();
     }
 }
 
