@@ -23,7 +23,7 @@ public class Main {
 //        Randomizer randomizer = new Randomizer();
 //        randomizer.start();
 
-        GuessNumber guessNumber = new GuessNumber();
+        GuessNumber guessNumber = new GuessNumber(5,1,100);
         guessNumber.start();
     }
 }
