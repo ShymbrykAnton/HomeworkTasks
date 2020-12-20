@@ -1,5 +1,6 @@
 package Check;
 
+import MathLibrary.UseMath;
 import Stars.DrawingStars;
 import hw2.RandomNumberGenerator;
 
@@ -28,8 +29,12 @@ public class Main {
 //        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 //        randomNumberGenerator.getRandomTimesRandomValues();
 
-        DrawingStars drawingStars = new DrawingStars();
-        drawingStars.drawBottomTriangle();
+//        DrawingStars drawingStars = new DrawingStars();
+//        drawingStars.drawX();
+
+        UseMath useMath = new UseMath();
+        String result = useMath.calculateExpression(360);
+        System.out.println(result);
     }
 }
 

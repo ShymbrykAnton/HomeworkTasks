@@ -72,11 +72,11 @@ public class DrawingStars {
         for (int x = 6; x >= 0; x--) {
             for (int y = 0; y < 6; y++) {
                 if (x != 0 && y != x) {
-                    System.out.print("  ");
+                    System.out.print("   ");
                 } else if (y == 0) {
-                    System.out.print("* ");
+                    System.out.print("*  ");
                 } else {
-                    System.out.print("* ");
+                    System.out.print("*  ");
                 }
             }
             if (x > 0) {
@@ -91,11 +91,9 @@ public class DrawingStars {
         for (int x = 6; x >= 0; x--) {
             for (int y = 6; y >= 0; y--) {
                 if (x != y && y != 0 && x != 6) {
-                    System.out.print("  ");
-                } else if (y == 6) {
-                    System.out.print("* ");
-                } else {
-                    System.out.print(" *");
+                    System.out.print("   ");
+                }  else {
+                    System.out.print("*  ");
                 }
             }
             if (x > 0) {
@@ -111,7 +109,7 @@ public class DrawingStars {
                 if (y != x && y != x1) {
                     System.out.print("   ");
                 } else {
-                    System.out.print("  *");
+                    System.out.print("*  ");
                 }
             }
             if (x > 0) {
@@ -144,7 +142,7 @@ public class DrawingStars {
                 if ((y != x && y != x1 && x != 0) || (x > 3)) {
                     System.out.print("   ");
                 } else {
-                    System.out.print("  *");
+                    System.out.print("*  ");
                 }
             }
             if (x > 0) {
