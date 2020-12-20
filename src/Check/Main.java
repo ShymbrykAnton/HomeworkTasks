@@ -29,7 +29,7 @@ public class Main {
 //        randomNumberGenerator.getRandomTimesRandomValues();
 
         DrawingStars drawingStars = new DrawingStars();
-        drawingStars.drawRightBottomTriangle();
+        drawingStars.drawBottomTriangle();
     }
 }
 
