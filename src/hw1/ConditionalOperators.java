@@ -59,15 +59,15 @@ public class ConditionalOperators {
     }
 
     public String getMaxMultiplyOrSumPlusThree(int a, int b, int c) {
-        if (a == 0 && b == 0 & c == 0) {
-            return "Результат умножения чисел равен результату суммирования: " + 3;
-        }
         int multiply = a * b * c;
         int summa = a + b + c;
-        if (multiply > summa) {
-            return "Числа были перемножены +3: " + multiply + 3;
+        if (a * b * c == a + b + c) {
+            return "Результат умножения чисел равен результату суммирования: "+ (multiply + 3);
         }
-        return "Числа были суммированы +3: " + summa + 3;
+        if (multiply > summa) {
+            return "Числа были перемножены +3: " + (multiply + 3);
+        }
+        return "Числа были суммированы +3: " + (summa + 3);
     }
 
     public String getMarkByRating(int rating) {

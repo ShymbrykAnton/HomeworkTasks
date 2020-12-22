@@ -24,7 +24,7 @@ public class Arrays {
     public int getMinElementIndex(int[] array) {
         int index = array.length - 1, minNumber = array[0], minIndex = 0;
         for (; index >= 0; index--) {
-            if (array[index] < minNumber) {
+            if (array[index] <= minNumber) {
                 minNumber = array[index];
                 minIndex = index;
             }
@@ -35,7 +35,7 @@ public class Arrays {
     public int getMaxElementIndex(int[] array) {
         int index = array.length - 1, maxNumber = array[0], maxIndex = 0;
         for (; index >= 0; index--) {
-            if (array[index] > maxNumber) {
+            if (array[index] >= maxNumber) {
                 maxNumber = array[index];
                 maxIndex = index;
             }
