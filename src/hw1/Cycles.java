@@ -26,15 +26,34 @@ public class Cycles {
         return "Вы ввели простое число: " + number;
     }
 
-    //3.	Найти корень натурального числа с точностью до целого (рассмотреть вариант последовательного подбора и метод бинарного поиска)
-    // как реализовать метод бинарного поиска здесь
     public String getSquareRootSequence(int number) {
         if (number <= 0) {
             return "Вы ввели неккоректное значение";
         }
-        for (int i = 0; i <= number; i++ ) {
+        for (int i = 0; i <= number; i++) {
             if (number == i * i) {
                 return "Корень вашего числа: " + i;
+            }
+        }
+        return "Из числа невозможно извлечь целочисленный корень";
+    }
+
+    public String getSquareRootBinary(int number) {
+        int start = 1;
+        int end = number/2;
+        int mid = start + (end - start) / 2;
+        if (number < 0) {
+            return "Невозможно извлечь корень из отрицательного числа";
+        }
+        if (number == 0 || number == 1) {
+            return "Корень вашего числа: " + number;
+        }
+        for (int i = 0, k = mid; i <= mid || k <= end; i++, k++) {
+            if (number == i * i) {
+                return "Корень вашего числа: " + i;
+            }
+            if (number == k * k) {
+                return "Корень вашего числа: " + k;
             }
         }
         return "Из числа невозможно извлечь целочисленный корень";
@@ -59,7 +78,7 @@ public class Cycles {
         if (number / 10 == 0) {
             return "Сумма цифр вашего числа: " + number;
         }
-        for ( numSum = 0; number > 0; ) {
+        for (numSum = 0; number > 0; ) {
             x = number % 10;
             number /= 10;
             numSum += x;

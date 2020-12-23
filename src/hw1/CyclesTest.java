@@ -62,6 +62,30 @@ class CyclesTest {
         String actual = cycles.getSquareRootSequence(8);
         Assertions.assertEquals(expected,actual);
     }
+    @Test
+    void getSquareRootBinary_ZERO() {
+        String expected = "Корень вашего числа: " + 1;
+        String actual = cycles.getSquareRootBinary(1);
+        Assertions.assertEquals(expected,actual);
+    }
+    @Test
+    void getSquareRootBinary_NEGATIVE_NUMBER() {
+        String expected = "Невозможно извлечь корень из отрицательного числа";
+        String actual = cycles.getSquareRootBinary(-25);
+        Assertions.assertEquals(expected,actual);
+    }
+    @Test
+    void getSquareRootBinary_STANDART() {
+        String expected = "Корень вашего числа: " + 5;
+        String actual = cycles.getSquareRootBinary(25);
+        Assertions.assertEquals(expected,actual);
+    }
+    @Test
+    void getSquareRootBinary_NOT_INTEGER() {
+        String expected = "Из числа невозможно извлечь целочисленный корень";
+        String actual = cycles.getSquareRootBinary(8);
+        Assertions.assertEquals(expected,actual);
+    }
 
     @Test
     void getFactorial_ZERO() {
