@@ -55,14 +55,14 @@ public class Arrays {
 
     public String reverseArray(int[] array) {
         int startIndex = 0, endIndex = array.length - 1, rememberStart;
-        String resultArray = "";
+        StringBuilder resultArray = new StringBuilder();
         for (; startIndex < array.length / 2; startIndex++, endIndex--) {
             rememberStart = array[startIndex];
             array[startIndex] = array[endIndex];
             array[endIndex] = rememberStart;
         }
-        for (int i = 0; i < array.length; i++) {
-            resultArray += array[i] + " ";
+        for (int j : array) {
+            resultArray.append(j).append(" ");
         }
         return "Перевернутый массив: " + resultArray;
     }
@@ -80,17 +80,17 @@ public class Arrays {
     public String swapFirstAndSecondPartOfArray(int[] array) {
         int startSwapIndex = 0, rememberStart;
         int notEvenLength = array.length % 2;
-        String swappedStringArray = "";
+        StringBuilder swappedStringArray = new StringBuilder();
         for (; startSwapIndex < array.length / 2; startSwapIndex++) {
             rememberStart = array[startSwapIndex];
             array[startSwapIndex] = array[(array.length / 2) + startSwapIndex + notEvenLength];
             array[(array.length / 2) + startSwapIndex + notEvenLength] = rememberStart;
         }
         // в случаях как здесь переделать под фор ич т е for (String value : array) sout (value)
-        for (int i = 0; i < array.length; i++) {
-            swappedStringArray += array[i] + " ";
+        for (int j : array) {
+            swappedStringArray.append(j).append(" ");
         }
-        return swappedStringArray;
+        return swappedStringArray.toString();
     }
 }
 //9.	Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))
