@@ -1,4 +1,4 @@
-package hw1;
+package HW1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

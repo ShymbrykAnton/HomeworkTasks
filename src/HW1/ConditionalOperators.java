@@ -1,4 +1,4 @@
-package hw1;
+package HW1;
 
 public class ConditionalOperators {
     public String getSumOrMultiply(int a, int b) {

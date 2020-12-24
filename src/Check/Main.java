@@ -1,8 +1,7 @@
 package Check;
 
-import MathLibrary.UseMath;
-import Stars.DrawingStars;
-import hw2.RandomNumberGenerator;
+import HW1.Arrays;
+import HW3.UseMath;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,11 +13,11 @@ public class Main {
 //        String result2 = cycles.getSquareRoot(9);
 //        System.out.println(result2);
 //
-//        Arrays arrays = new Arrays();
-//        // Возможно ли сделать инициализацию исходных данных массива и вызов метода одной строкой?
-//        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-//        String result3 = arrays.swapFirstAndSecondPartOfArray(array);
-//        System.out.println(result3);
+        Arrays arrays = new Arrays();
+        // Возможно ли сделать инициализацию исходных данных массива и вызов метода одной строкой?
+        int[] array = {-9, 7, -6, 4, -5, 2, -3, 1,0,1, -8, 10, -11};
+        String result3 = arrays.bubbleSort(array);
+        System.out.println(result3);
 
 //        Randomizer randomizer = new Randomizer();
 //        randomizer.start();
@@ -32,9 +31,9 @@ public class Main {
 //        DrawingStars drawingStars = new DrawingStars();
 //        drawingStars.drawX();
 
-        UseMath useMath = new UseMath();
-        String result = useMath.calculateExpression(360);
-        System.out.println(result);
+//        UseMath useMath = new UseMath();
+//        String result = useMath.calculateExpression(360);
+//        System.out.println(result);
     }
 }
 

@@ -1,4 +1,4 @@
-package MathLibrary;
+package HW3;
 
 import java.text.DecimalFormat;
 

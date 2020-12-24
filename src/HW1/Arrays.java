@@ -1,4 +1,4 @@
-package hw1;
+package HW1;
 
 public class Arrays {
     public int getMinElementInArray(int[] array) {
@@ -86,10 +86,28 @@ public class Arrays {
             array[startSwapIndex] = array[(array.length / 2) + startSwapIndex + notEvenLength];
             array[(array.length / 2) + startSwapIndex + notEvenLength] = rememberStart;
         }
-        for (int j : array) {
-            swappedStringArray.append(j).append(" ");
+        for (int value : array) {
+            swappedStringArray.append(value).append(" ");
         }
         return swappedStringArray.toString();
+    }
+
+    public String bubbleSort(int[] array) {
+        int strCounter, rightSymbol, numberSaver;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (strCounter = 0; strCounter < array.length; strCounter++) {
+            for (rightSymbol = 0; rightSymbol < array.length - strCounter - 1; rightSymbol++) {
+                if (array[rightSymbol] > array[rightSymbol + 1]) {
+                    numberSaver = array[rightSymbol + 1];
+                    array[rightSymbol + 1] = array[rightSymbol];
+                    array[rightSymbol] = numberSaver;
+                }
+            }
+        }
+        for (int value : array) {
+            stringBuilder.append(value).append(" ");
+        }
+        return stringBuilder.toString();
     }
 }
 //9.	Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))

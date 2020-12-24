@@ -1,4 +1,4 @@
-package hw1;
+package HW1;
 
 public class Cycles {
     public String getEvenSumNumber(int count) {
