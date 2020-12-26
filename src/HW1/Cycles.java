@@ -14,23 +14,25 @@ public class Cycles {
         }
     }
 
-    public String checkNumberIsPrime(int number) {
+    public boolean checkNumberIsPrime(int number) {
         if (number < 2) {
-            return "Вы ввели число меньше или равное единице. Такие числа не являються простыми";
+            return false;
         }
-        for (int i = 2; i < number; i++) {
+        int i;
+        for (i = 2; i < number; i++) {
             if (number % i == 0) {
-                return "Вы ввели не простое число: " + number;
+                return false;
             }
         }
-        return "Вы ввели простое число: " + number;
+        return true;
     }
 
     public String getSquareRootSequence(int number) {
-        if (number <= 0) {
-            return "Вы ввели неккоректное значение";
+        if (number < 0) {
+            return "Невозможно извлечь корень из отрицательного числа";
         }
-        for (int i = 0; i <= number; i++) {
+        int i;
+        for (i = 0; i <= number; i++) {
             if (number == i * i) {
                 return "Корень вашего числа: " + i;
             }
@@ -39,16 +41,14 @@ public class Cycles {
     }
 
     public String getSquareRootBinary(int number) {
-        int start = 1;
-        int end = number/2;
-        int mid = start + (end - start) / 2;
         if (number < 0) {
             return "Невозможно извлечь корень из отрицательного числа";
         }
         if (number == 0 || number == 1) {
             return "Корень вашего числа: " + number;
         }
-        for (int i = 0, k = mid; i <= mid || k <= end; i++, k++) {
+        int i, k, end, mid, start;
+        for (i = 0, start = 1, end = number / 2, mid = start + (end - start) / 2, k = mid; i <= mid || k <= end; i++, k++) {
             if (number == i * i) {
                 return "Корень вашего числа: " + i;
             }
@@ -60,46 +60,43 @@ public class Cycles {
     }
 
     public String getFactorial(int number) {
-        int result, i;
         if (number < 0) {
             return "Невозможно получить факториал отрицательного числа";
         }
+        int result, i;
         for (i = 1, result = 1; i <= number; i++) {
             result *= i;
         }
         return "Факториал числа " + number + ": " + result;
     }
 
-    public String getNumeralSum(int number) {
-        int numSum, x, compareNumber = number;
+    public int getNumeralSum(int number) {
+        if (number / 10 == 0) {
+            return number;
+        }
         if (number < 0) {
             number *= -1;
         }
-        if (number / 10 == 0) {
-            return "Сумма цифр вашего числа: " + number;
-        }
+        int numSum, x;
         for (numSum = 0; number > 0; ) {
             x = number % 10;
             number /= 10;
             numSum += x;
         }
-        return "Ваше число:" + compareNumber + "\nСумма цифр вашего числа: " + numSum;
+        return numSum;
     }
 
-    public String getReversedNumber(int number) {
-        int result, i, compareNumber = number;
+    public int getReversedNumber(int number) {
         if (number < 0) {
             number *= -1;
         }
+        int result, i;
         for (result = 0; number > 0; ) {
             i = number % 10;
             number /= 10;
             result *= 10;
             result += i;
         }
-        if (compareNumber < 0) {
-            result *= -1;
-        }
-        return "Ваше число:" + compareNumber + "\nОтзеркаленное число: " + result;
+        return result;
     }
 }

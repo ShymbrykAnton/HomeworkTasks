@@ -5,22 +5,21 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Randomizer {
-    // два исключения вводимое не того типа что нужно
-    // учесть числа с плавающей точкой
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
+    String userCommand;
     int min, max, count;
     int[] array = new int[max - min + 1];
 
     public void start() {
         System.out.println("Добро пожаловать в рандомайзер.");
         System.out.println("Введите минимальное число диапазона (От 1 до 500)");
-//        try {
-        min = scanner.nextInt();
-//        } catch (InputMismatchException exception) {
-//            System.out.println("Введенные вами символы  - не цифры");
-//            System.exit(0);
-//        }
+        try {
+            min = scanner.nextInt();
+        } catch (InputMismatchException exception) {
+            System.out.println("Введенные вами символы  - не цифры");
+            System.exit(0);
+        }
         if (min <= 0) {
             System.out.println("Минимальное число диапазона не может быть меньше нуля или равным ему");
             start();
@@ -30,7 +29,12 @@ public class Randomizer {
             start();
         }
         System.out.println("Введите максимальное число диапазона (От минимального числа до 500)");
-        max = scanner.nextInt();
+        try {
+            max = scanner.nextInt();
+        } catch (InputMismatchException exception) {
+            System.out.println("Введенные вами символы  - не цифры");
+            System.exit(0);
+        }
         if (max > 500) {
             System.out.println("Максимальное число не может быть больше 500");
             start();
@@ -41,35 +45,33 @@ public class Randomizer {
         }
         array = new int[max - min + 1];
         count = 0;
+        System.out.println("                         Главное меню");
+        System.out.println("Введите одну из трех доступных комманд: \"generate\", \"help\", \"exit\"");
         menu();
     }
 
-    // после цикла generate ов, чтобы чзапустить команду необходимо дважды ввести комманду (решить проблему)
     public void menu() {
-        System.out.println("                         Главное меню");
-        System.out.println("Введите одну из трех доступных комманд: \"generate\", \"help\", \"exit\"");
-        scanner.nextLine();
-        while (true) {
-            //добавить свитч кейс
-            // разобраться с фор ич для вывода значений
-            String userCommand = scanner.nextLine();
-            if (userCommand.equalsIgnoreCase("generate")) {
+        switch (userCommand = scanner.nextLine()) {
+            case "generate":
                 generate();
-            } else if (userCommand.equalsIgnoreCase("help")) {
+                break;
+            case "help":
                 help();
-            } else if (userCommand.equalsIgnoreCase("exit")) {
+                break;
+            case "exit":
                 exit();
-            } else {
-                System.out.println("Ваша комманда не совпадает с существующими, пожалуйста перепечатайте");
+                break;
+            default:
                 menu();
-            }
+                break;
         }
     }
 
+
     public void generate() {
         if (array.length == count) {
-            System.out.println("Все доступные уникальные числа в данном диапазоне закончились\n");
-            menu();
+            System.out.print("Все доступные уникальные числа в данном диапазоне закончились\n");
+            exit();
         }
         while (true) {
             int randomValue = random.nextInt((max - min) + 1) + min;
@@ -77,19 +79,19 @@ public class Randomizer {
                 array[randomValue - min] = randomValue;
                 System.out.println(randomValue);
                 count++;
-                break;
+                menu();
             }
         }
     }
 
     public void exit() {
-        System.out.println("Вы правда хотите выйти? (Yes/No)");
+        System.out.println("Вы правда хотите выйти? Yes (выход из программы) / No (перезапуск программы)");
         String userCommand = scanner.nextLine();
         if (userCommand.equalsIgnoreCase("Yes")) {
             System.exit(0);
         }
         if (userCommand.equalsIgnoreCase("No")) {
-            menu();
+            start();
         }
     }
 

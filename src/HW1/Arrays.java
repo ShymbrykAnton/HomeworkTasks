@@ -1,9 +1,15 @@
 package HW1;
 
 public class Arrays {
+    StringBuilder resultArray = new StringBuilder();
+
     public int getMinElementInArray(int[] array) {
-        int i = array.length - 1, minNumber = array[0];
-        for (; i >= 0; i--) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return 0;
+        }
+        int i, minNumber;
+        for (i = array.length - 1, minNumber = array[0]; i >= 0; i--) {
             if (array[i] < minNumber) {
                 minNumber = array[i];
             }
@@ -12,8 +18,12 @@ public class Arrays {
     }
 
     public int getMaxElementInArray(int[] array) {
-        int index = array.length - 1, maxNumber = array[0];
-        for (; index >= 0; index--) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return 0;
+        }
+        int index, maxNumber;
+        for (index = array.length - 1, maxNumber = array[0]; index >= 0; index--) {
             if (array[index] > maxNumber) {
                 maxNumber = array[index];
             }
@@ -22,8 +32,12 @@ public class Arrays {
     }
 
     public int getMinElementIndex(int[] array) {
-        int index = array.length - 1, minNumber = array[0], minIndex = 0;
-        for (; index >= 0; index--) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return 0;
+        }
+        int index, minNumber, minIndex;
+        for (index = array.length - 1, minNumber = array[0], minIndex = 0; index >= 0; index--) {
             if (array[index] <= minNumber) {
                 minNumber = array[index];
                 minIndex = index;
@@ -33,8 +47,12 @@ public class Arrays {
     }
 
     public int getMaxElementIndex(int[] array) {
-        int index = array.length - 1, maxNumber = array[0], maxIndex = 0;
-        for (; index >= 0; index--) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return 0;
+        }
+        int index, maxNumber, maxIndex;
+        for (index = array.length - 1, maxNumber = array[0], maxIndex = 0; index >= 0; index--) {
             if (array[index] >= maxNumber) {
                 maxNumber = array[index];
                 maxIndex = index;
@@ -44,9 +62,16 @@ public class Arrays {
     }
 
     public int getSumNotEvenIndexElement(int[] array) {
-        int index = 0, sum = 0;
-        for (; index < array.length; index++) {
-            if ((index + 2) % 2 != 0) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return 0;
+        }
+        int index, sum;
+        if (array.length == 1) {
+            return array[0];
+        }
+        for (index = 0,sum = 0; index < array.length; index++) {
+            if (array[index] % 2 != 0) {
                 sum += array[index];
             }
         }
@@ -54,22 +79,29 @@ public class Arrays {
     }
 
     public String reverseArray(int[] array) {
-        int startIndex = 0, endIndex = array.length - 1, rememberStart;
-        StringBuilder resultArray = new StringBuilder();
-        for (; startIndex < array.length / 2; startIndex++, endIndex--) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return null;
+        }
+        int startIndex, endIndex, rememberStart;
+        for (startIndex = 0, endIndex = array.length - 1; startIndex < array.length / 2; startIndex++, endIndex--) {
             rememberStart = array[startIndex];
             array[startIndex] = array[endIndex];
             array[endIndex] = rememberStart;
         }
-        for (int j : array) {
-            resultArray.append(j).append(" ");
+        for (int value : array) {
+            resultArray.append(value).append(" ");
         }
-        return "Перевернутый массив: " + resultArray;
+        return resultArray.toString();
     }
 
     public int countNotEvenElementInArray(int[] array) {
-        int index = 0, count = 0;
-        for (; index < array.length; index++) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return 0;
+        }
+        int index , count;
+        for (index = 0, count = 0; index < array.length; index++) {
             if (array[index] % 2 != 0) {
                 count++;
             }
@@ -78,23 +110,28 @@ public class Arrays {
     }
 
     public String swapFirstAndSecondPartOfArray(int[] array) {
-        int startSwapIndex = 0, rememberStart;
-        int notEvenLength = array.length % 2;
-        StringBuilder swappedStringArray = new StringBuilder();
-        for (; startSwapIndex < array.length / 2; startSwapIndex++) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return null;
+        }
+        int startSwapIndex, rememberStart,notEvenLength;
+        for (startSwapIndex = 0,notEvenLength = array.length % 2; startSwapIndex < array.length / 2; startSwapIndex++) {
             rememberStart = array[startSwapIndex];
             array[startSwapIndex] = array[(array.length / 2) + startSwapIndex + notEvenLength];
             array[(array.length / 2) + startSwapIndex + notEvenLength] = rememberStart;
         }
         for (int value : array) {
-            swappedStringArray.append(value).append(" ");
+            resultArray.append(value).append(" ");
         }
-        return swappedStringArray.toString();
+        return resultArray.toString();
     }
 
     public String bubbleSort(int[] array) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return null;
+        }
         int strCounter, rightSymbol, numberSaver;
-        StringBuilder stringBuilder = new StringBuilder();
         for (strCounter = 0; strCounter < array.length; strCounter++) {
             for (rightSymbol = 0; rightSymbol < array.length - strCounter - 1; rightSymbol++) {
                 if (array[rightSymbol] > array[rightSymbol + 1]) {
@@ -105,11 +142,58 @@ public class Arrays {
             }
         }
         for (int value : array) {
-            stringBuilder.append(value).append(" ");
+            resultArray.append(value).append(" ");
         }
-        return stringBuilder.toString();
+        return resultArray.toString();
+    }
+
+    public String selectSort(int[] array) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return null;
+        }
+        int minElementIndex, saveNumber,strCounter,numberCounter;
+        for (strCounter = 0; strCounter < array.length; strCounter++) {
+            minElementIndex = strCounter;
+            saveNumber = array[strCounter];
+            for ( numberCounter = strCounter + 1; numberCounter < array.length; numberCounter++) {
+                if (array[numberCounter] < array[minElementIndex]) {
+                    minElementIndex = numberCounter;
+                }
+            }
+            array[strCounter] = array[minElementIndex];
+            array[minElementIndex] = saveNumber;
+        }
+        for (int value : array) {
+            resultArray.append(value).append(" ");
+        }
+        return resultArray.toString();
+    }
+
+    public String insertSort(int[] array) {
+        int[] arrayEmpty = new int[]{};
+        if (java.util.Arrays.equals(array, arrayEmpty)) {
+            return null;
+        }
+        int saveNumber, left, right;
+        for ( left = 0; left < array.length; left++) {
+            saveNumber = array[left];
+            right = left - 1;
+            for (; right >= 0; right--) {
+                if (saveNumber < array[right]) {
+                    array[right + 1] = array[right];
+                } else {
+                    break;
+                }
+            }
+            array[right + 1] = saveNumber;
+        }
+        for (int value : array) {
+            resultArray.append(value).append(" ");
+        }
+        return resultArray.toString();
     }
 }
-//9.	Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))
+//TODO можно ли заменить ArrayEmpty?
 
 

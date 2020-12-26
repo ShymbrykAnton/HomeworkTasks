@@ -33,15 +33,24 @@ public class UseMath {
         double distance = Math.abs((firstCarSpeed + secondCarSpeed) * time + startDistance);
         return "Расстояние между машинами, при скорости первой и второй машины: " + firstCarSpeed + " и " + secondCarSpeed + " км/ч и начальном расстоянии между ними: " + startDistance + " км через " + time + " часов равно " + distance + " км";
     }
+    private double area (double x1, double y1, double x2, double y2, double x3, double y3) {
+        return Math.abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0);
+    }
 
     public boolean isDotInsideArea(double x, double y) {
-        //Прежде всего обратим внимание на то, что эту сложную фигуру целесообразно разбить на несколько более простых: треугольник, лежащий в I и IV
-        // координатных четвертях и треугольник, лежащий во II и III четвертях.
-        // Таким образом, точка может попасть внутрь одной из этих фигур, либо на линию, их ограничивающую.
-        // Количество отношений, описывающих какую-либо область, обычно совпадает с количеством линий, эту область ограничивающих.
-        // Чтобы точка попала внутрь области, необходима истинность каждого из отношений, поэтому над ними выполняется операция AND.
-        // Так вся область была разбита на несколько, то между отношениями, описывающими каждую из них, используется операция OR.
-        return (x >= 0 && y >= 1.5 * x - 1 && y <= x) || (x <= 0 && y >= -1.5 * x - 1 && y <= x);
+        double xA = 0, yA = 0, xB = 0, yB = -1, xC = -2, yC = 2, xD = 2, yD = 2;
+        double area1 = area(xA, yA, xB, yB, xC, yC);
+        double area2 = area(xA, yA, xB, yB, xD, yD);
+
+        double A1 = area(x, y, xB, yB, xC, yC);
+        double A2 = area(xA, yA, x, y, xC, yC);
+        double A3 = area(xA, yA, xB, yB, x, y);
+
+        double D1 = area(x, y, xB, yB, xD, yD);
+        double D2 = area(xA, yA, x, y, xD, yD);
+        double D3 = area(xA, yA, xB, yB, x, y);
+
+        return (area1 == A1 + A2 + A3) || (area2 == D1 + D2 + D3);
     }
 
     public String calculateExpression(double x) {

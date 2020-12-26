@@ -2,6 +2,9 @@ package HW1;
 
 public class ConditionalOperators {
     public String getSumOrMultiply(int a, int b) {
+        if (a == 0) {
+            return "Число а = 0: " + 0;
+        }
         if (a % 2 == 0) {
             return "Число а - четное: " + (a * b);
         }
@@ -9,40 +12,41 @@ public class ConditionalOperators {
     }
 
     public String findQuarterByCoordinates(int x, int y) {
+        String formal = "Точка принадлежит следующим(ей) четвертям(и): ";
         if (x > 0) {
             if (y > 0) {
-                return "Точка принадлежит первой четверти";
+                return formal + "первой";
             }
             if (y < 0) {
-                return "Точка принадлежит четвертой четверти";
+                return formal + "четвертой";
             }
         }
         if (x < 0) {
             if (y > 0) {
-                return "Точка принадлежит второй четверти";
+                return formal + "второй";
             }
             if (y < 0) {
-                return "Точка принадлежит третьей четверти";
+                return formal + "третьей";
             }
         }
         if (x == 0) {
             if (y > 0) {
-                return "Точка принадлежит первой и второй четверти";
+                return formal + "первой и второй";
             }
             if (y < 0) {
-                return "Точка принадлежит третьей четвертой четверти";
+                return formal + "третьей и четвертой";
             }
         }
         if (x > 0) {
-            return "Точка принадлежит первой и четвертой четверти";
+            return formal + "первой и четвертой";
         }
         if (x < 0) {
-            return "Точка принадлежит второй и третьей четверти";
+            return formal + "второй и третьей";
         }
         return "Точка лежит в начале координат";
     }
 
-    public String getOnlyPositiveNumberSum(int a, int b, int c) {
+    public int getOnlyPositiveNumberSum(int a, int b, int c) {
         int result = 0;
         if (a >= 0) {
             result += a;
@@ -53,19 +57,19 @@ public class ConditionalOperators {
         if (c >= 0) {
             result += c;
         }
-        return "Сумма положительных из трех чисел: " + result;
+        return result;
     }
 
-    public String getMaxMultiplyOrSumPlusThree(int a, int b, int c) {
+    public int getMaxMultiplyOrSumPlusThree(int a, int b, int c) {
         int multiply = a * b * c;
         int summa = a + b + c;
-        if (a * b * c == a + b + c) {
-            return "Результат умножения чисел равен результату суммирования: "+ (multiply + 3);
+        if (multiply == summa) {
+            return (multiply + 3);
         }
         if (multiply > summa) {
-            return "Числа были перемножены +3: " + (multiply + 3);
+            return (multiply + 3);
         }
-        return "Числа были суммированы +3: " + (summa + 3);
+        return (summa + 3);
     }
 
     public String getMarkByRating(int rating) {

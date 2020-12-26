@@ -1,6 +1,8 @@
 package Stars;
 
 public class DrawingStars {
+    //TODO strip или trim убрать по бокам строки пробелы, но не между
+    // оверрайд или переопределение иквалс
     public void drawSquare() {
         for (int i = 0; i < 7; i++) {
 
@@ -92,7 +94,7 @@ public class DrawingStars {
             for (int y = 6; y >= 0; y--) {
                 if (x != y && y != 0 && x != 6) {
                     System.out.print("   ");
-                }  else {
+                } else {
                     System.out.print("*  ");
                 }
             }

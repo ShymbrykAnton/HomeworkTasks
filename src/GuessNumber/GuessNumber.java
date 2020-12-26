@@ -2,7 +2,6 @@ package GuessNumber;
 
 
 import java.util.InputMismatchException;
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,8 +41,6 @@ public class GuessNumber {
 
     public void generateNumber() {
         randomValue = random.nextInt((max - min) + 1) + min;
-        // не забыть убрать
-        System.out.println(randomValue);
         System.out.println("Число было сгенерировано. В любой момент при вводе комманды \"exit\" программа завершит свою работу ");
         guessNumber();
     }
@@ -58,39 +55,35 @@ public class GuessNumber {
                     exit();
                 } else {
                     System.out.println("Некоректная комманда");
-                    guessNumber();
+                    continue;
                 }
             }
             if (tryingGuess == randomValue) {
-                System.out.println("Поздравляю, вы угадали число за " + (tryCounter + 1) + " попыток");
+                System.out.println("Поздравляю, вы угадали число за " + (tryCounter + 1) + " попыток, до свидания");
                 break;
             }
-            if (tryCounter == 0 ) {
+            if (tryCounter == 0) {
                 System.out.println("Не угадал, попробуй ещё");
             }
             if (tryCounter >= 1) {
                 if (tryingGuess >= randomValue - 5 && tryingGuess <= randomValue + 5) {
-                    System.out.println("Не угадал, но было жарко");
+                    System.out.println("Жарко, попробуй ещё");
                 } else if (tryingGuess >= randomValue - 15 && tryingGuess <= randomValue + 15) {
-                    System.out.println("Не угадал, но было тепло");
+                    System.out.println("Тепло, попробуй ещё");
                 } else if (tryingGuess <= randomValue - 16 || tryingGuess >= randomValue + 16) {
-                    System.out.println("Холодно, не угадал");
+                    System.out.println("Холодно, попробуй ещё");
                 }
             }
             if (tryCounter == tryNumber - 1) {
-                System.out.println("Колличество попыток закончилось");
+                System.out.println("Колличество попыток закончилось, а ты всё так и не догадался какое число я задумал, до свидания");
+                System.exit(0);
             }
         }
-        exit();
     }
 
     public void exit() {
-        // при конце попыток дважды выводит надписи екзита
         System.out.println("Вы хотите завершить роботу программы? Yes (выход) / No (перезапуск программы)");
-        scanner.nextLine();
-        userCommand = scanner.nextLine();
-        userCommand = userCommand.toLowerCase(Locale.ROOT);
-        switch (userCommand) {
+        switch (userCommand = scanner.nextLine()) {
             case "yes":
                 System.out.println("Надеюсь вы ещё вернетесь)");
                 System.exit(0);
