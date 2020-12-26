@@ -2,6 +2,7 @@ package Check;
 
 import GuessNumber.GuessNumber;
 import HW1.Arrays;
+import HW1.Functions;
 import HW3.UseMath;
 import Randomizer.Randomizer;
 import Stars.DrawingStars;
@@ -30,28 +31,31 @@ public class Main {
 //        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 //        randomNumberGenerator.getRandomTimesRandomValues();
 
-        DrawingStars drawingStars = new DrawingStars();
-        drawingStars.drawSquare();
-        System.out.println();
-        drawingStars.drawEmptySquare();
-        System.out.println();
-        drawingStars.drawLeftBottomTriangle();
-        System.out.println();
-        drawingStars.drawLeftTopTriangle();
-        System.out.println();
-        drawingStars.drawRightTopTriangle();
-        System.out.println();
-        drawingStars.drawRightBottomTriangle();
-        System.out.println();
-        drawingStars.drawX();
-        System.out.println();
-        drawingStars.drawTopTriangle();
-        System.out.println();
-        drawingStars.drawBottomTriangle();
+//        DrawingStars drawingStars = new DrawingStars();
+//        drawingStars.drawSquare();
+//        System.out.println();
+//        drawingStars.drawEmptySquare();
+//        System.out.println();
+//        drawingStars.drawLeftBottomTriangle();
+//        System.out.println();
+//        drawingStars.drawLeftTopTriangle();
+//        System.out.println();
+//        drawingStars.drawRightTopTriangle();
+//        System.out.println();
+//        drawingStars.drawRightBottomTriangle();
+//        System.out.println();
+//        drawingStars.drawX();
+//        System.out.println();
+//        drawingStars.drawTopTriangle();
+//        System.out.println();
+//        drawingStars.drawBottomTriangle();
 
 //        UseMath useMath = new UseMath();
 //        boolean result = useMath.isDotInsideArea(-0.25,0.5);
 //        System.out.println(result);
+        Functions functions = new Functions();
+        String result = functions.getStringFromNumber(150);
+        System.out.println(result);
     }
 }
 
