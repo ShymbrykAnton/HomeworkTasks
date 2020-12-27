@@ -54,7 +54,7 @@ public class Main {
 //        boolean result = useMath.isDotInsideArea(-0.25,0.5);
 //        System.out.println(result);
         Functions functions = new Functions();
-        String result = functions.getStringFromNumber(150);
+        String result = functions.getStringFromNumber(308);
         System.out.println(result);
     }
 }
