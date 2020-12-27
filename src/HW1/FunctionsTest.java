@@ -42,4 +42,14 @@ class FunctionsTest {
         int actual = functions.getNumberFromString(number);
         Assertions.assertEquals(expected,actual);
     }
+    @Test
+    void getStringFromNumberTest_INVALID1() {
+        String expected = "Выход за пределы допустимого диапазона";
+        String actual = functions.getStringFromNumber(1005);
+    }
+    @Test
+    void getStringFromNumberTest_INVALID2() {
+        String expected = "Выход за пределы допустимого диапазона";
+        String actual = functions.getStringFromNumber(-5);
+    }
 }

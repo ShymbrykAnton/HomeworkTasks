@@ -117,8 +117,7 @@ public class Functions {
                     }
                 }
             }
-            return resultInt;
         }
-        return 0;
+        return resultInt;
     }
 }
