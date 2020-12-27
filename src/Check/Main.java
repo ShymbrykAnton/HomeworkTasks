@@ -5,6 +5,8 @@ import HW1.Arrays;
 import HW1.Functions;
 import HW3.UseMath;
 import Randomizer.Randomizer;
+import SimpleCalcSwing.Blogic.Math.Calculations;
+import SimpleCalcSwing.View.Calculator;
 import Stars.DrawingStars;
 
 public class Main {
@@ -53,9 +55,8 @@ public class Main {
 //        UseMath useMath = new UseMath();
 //        boolean result = useMath.isDotInsideArea(-0.25,0.5);
 //        System.out.println(result);
-        Functions functions = new Functions();
-        String result = functions.getStringFromNumber(308);
-        System.out.println(result);
+//
+        Calculator calculator = new Calculator();
     }
 }
 

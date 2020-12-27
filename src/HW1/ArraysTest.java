@@ -80,30 +80,30 @@ public class ArraysTest {
 
     static Stream<Arguments> reverseArrayTest_NOMINAL() {
         return Stream.of(
-                arguments(array1, "10 9 8 1 0 -8 -123 "),
-                arguments(array2, "1050 23 9 8 6 1 0 "),
-                arguments(array3, "50 160 125 25 523 50 "),
-                arguments(array4, "-293 "),
+                arguments(array1, "10 9 8 1 0 -8 -123"),
+                arguments(array2, "1050 23 9 8 6 1 0"),
+                arguments(array3, "50 160 125 25 523 50"),
+                arguments(array4, "-293"),
                 arguments(array5, null)
         );
     }
 
     static Stream<Arguments> swapFirstAndSecondPartOfArrayTest_NOMINAL() {
         return Stream.of(
-                arguments(array1, "8 9 10 -123 -8 0 1 "),
-                arguments(array2, "8 9 1050 6 23 0 1 "),
-                arguments(array3, "50 523 25 125 160 50 "),
-                arguments(array4, "-293 "),
+                arguments(array1, "8 9 10 -123 -8 0 1"),
+                arguments(array2, "8 9 1050 6 23 0 1"),
+                arguments(array3, "50 523 25 125 160 50"),
+                arguments(array4, "-293"),
                 arguments(array5, null)
         );
     }
 
     static Stream<Arguments> sortTest_NOMINAL() {
         return Stream.of(
-                arguments(array1, "-123 -8 0 1 8 9 10 "),
-                arguments(array2, "0 1 6 8 9 23 1050 "),
-                arguments(new int[]{5, 2, 3, 4, 2, 5, 1, 7}, "1 2 2 3 4 5 5 7 "),
-                arguments(array4, "-293 "),
+                arguments(array1, "-123 -8 0 1 8 9 10"),
+                arguments(array2, "0 1 6 8 9 23 1050"),
+                arguments(new int[]{5, 2, 3, 4, 2, 5, 1, 7}, "1 2 2 3 4 5 5 7"),
+                arguments(array4, "-293"),
                 arguments(array5, null)
         );
     }
