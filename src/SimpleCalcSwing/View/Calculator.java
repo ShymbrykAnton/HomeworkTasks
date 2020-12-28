@@ -5,19 +5,21 @@ import SimpleCalcSwing.Blogic.Math.Calculations;
 import SimpleCalcSwing.ButtonListeners.ButtonClickListener;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
-
 
 public class Calculator {
 
     public Calculator() {
         JFrame frame = new JFrame("Калькулятор");
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.getContentPane().setBackground(new Color(40,120,40));
         JTextArea helpTextArea = new JTextArea();
         helpTextArea.setBounds(10,20,360,80);
-        helpTextArea.setText("    Данный калькулятор умеет выполнять следующие операции: " +
-                "\nсуммирование   -  \"+\", вычитание   -  \"-\", умножение  -  \"*\"," +
-                "\nделение - \"/\", вычисление корня число 2-степени - \"root\"," +
-                "\nвозведение числа в число 2-степень - \"-pow\".");
+        helpTextArea.setText("  Данный калькулятор умеет выполнять следующие операции: " +
+                "\n суммирование   -  \"+\", вычитание   -  \"-\", умножение  -  \"*\"," +
+                "\n деление - \"/\", вычисление корня число 2-степени - \"root\"," +
+                "\n возведение числа в число 2-степень - \"pow\".");
 
         JLabel labelNumber1 = new JLabel("Число 1");
         JTextField textFieldNumber1 = new JTextField();
