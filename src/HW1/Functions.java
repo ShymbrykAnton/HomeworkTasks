@@ -9,7 +9,6 @@ public class Functions {
     String[] diapason1000 = {"", "Сто ", "Двести ", "Триста ", "Четыреста ", "Пятьсот ",
             "Шестьсот ", "Семьсот ", "Восемьсот ", "Девятьсот "};
     StringBuilder result = new StringBuilder();
-
     public String getStringFromNumber(int number) {
         if (number < 0 || number > 999) {
             return "Выход за пределы допустимого диапазона";
@@ -34,7 +33,6 @@ public class Functions {
                 }
             }
         }
-
         if (thirdNumber < 20) {
             if (number % 100 < 20) {
                 thirdNumber = number % 100;
@@ -50,6 +48,9 @@ public class Functions {
 
     public int getNumberFromString(String number) {
         if (number.equalsIgnoreCase("Ноль")) {
+            return 0;
+        }
+        if (number.equalsIgnoreCase("")) {
             return 0;
         }
         int resultInt = 0, firstNumber, secondNumber, thirdNumber;

@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class Calculator {
+    //TODO разобраться с native Math.pow
 
     public Calculator() {
         JFrame frame = new JFrame("Калькулятор");

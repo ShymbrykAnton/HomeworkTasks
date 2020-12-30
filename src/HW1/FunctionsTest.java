@@ -8,7 +8,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class FunctionsTest {
@@ -46,10 +45,18 @@ class FunctionsTest {
     void getStringFromNumberTest_INVALID1() {
         String expected = "Выход за пределы допустимого диапазона";
         String actual = functions.getStringFromNumber(1005);
+        Assertions.assertEquals(expected,actual);
     }
     @Test
     void getStringFromNumberTest_INVALID2() {
         String expected = "Выход за пределы допустимого диапазона";
         String actual = functions.getStringFromNumber(-5);
+        Assertions.assertEquals(expected,actual);
+    }
+    @Test
+    void getNumberFromStringTest_INVALID2() {
+        int expected = 0;
+        int actual = functions.getNumberFromString("");
+        Assertions.assertEquals(expected,actual);
     }
 }

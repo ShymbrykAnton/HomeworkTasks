@@ -3,7 +3,8 @@ package HW3;
 import java.text.DecimalFormat;
 
 public class UseMath {
-    final String C = "#0.00";
+    private final static String C = "#0.00";
+    private final static double G = 9.80665;
 
     public String getFlightDistanceByDegree(double speed, double angle) {
         if (speed < 0 || angle < 0) {
@@ -11,7 +12,7 @@ public class UseMath {
             System.exit(0);
         }
         speed *= (1000.0 / 3600);
-        double flightDistance = Math.pow(speed, 2) / 9.80665 * Math.sin(Math.toRadians(2 * angle));
+        double flightDistance = Math.pow(speed, 2) / G * Math.sin(Math.toRadians(2 * angle));
         speed *= (3600 / 1000.0);
         String result = new DecimalFormat(C).format(flightDistance);
         return "Расстояние полёта снаряда при скорости: " + speed + " км/ч и угле наклона ствола: " + angle + " градусов равно: " + result + " метров";
@@ -23,7 +24,7 @@ public class UseMath {
             System.exit(0);
         }
         speed *= (1000.0 / 3600);
-        double flightDistance = Math.pow(speed, 2) / 9.80665 * Math.sin(2 * angle);
+        double flightDistance = Math.pow(speed, 2) / G * Math.sin(2 * angle);
         speed *= (3600 / 1000.0);
         String result = new DecimalFormat(C).format(flightDistance);
         return "Расстояние полёта снаряда при скорости: " + speed + " км/ч и угле наклона ствола: " + angle + " радианов равно: " + result + " метров";
@@ -33,8 +34,9 @@ public class UseMath {
         double distance = Math.abs((firstCarSpeed + secondCarSpeed) * time + startDistance);
         return "Расстояние между машинами, при скорости первой и второй машины: " + firstCarSpeed + " и " + secondCarSpeed + " км/ч и начальном расстоянии между ними: " + startDistance + " км через " + time + " часов равно " + distance + " км";
     }
-    private double area (double x1, double y1, double x2, double y2, double x3, double y3) {
-        return Math.abs((x1*(y2-y3) + x2*(y3-y1)+ x3*(y1-y2))/2.0);
+
+    private double area(double x1, double y1, double x2, double y2, double x3, double y3) {
+        return Math.abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0);
     }
 
     public boolean isDotInsideArea(double x, double y) {

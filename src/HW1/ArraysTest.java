@@ -184,5 +184,4 @@ public class ArraysTest {
         String actual = arrays.insertSort(array);
         Assertions.assertEquals(expected, actual);
     }
-
 }

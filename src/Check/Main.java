@@ -1,5 +1,7 @@
 package Check;
 
+import CharactersAndAndStrings.CharactersInOneString;
+import CharactersAndAndStrings.ConversionFunctions;
 import GuessNumber.GuessNumber;
 import HW1.Arrays;
 import HW1.Functions;
@@ -34,20 +36,6 @@ public class Main {
 //        randomNumberGenerator.getRandomTimesRandomValues();
 
 //        DrawingStars drawingStars = new DrawingStars();
-//        drawingStars.drawSquare();
-//        System.out.println();
-//        drawingStars.drawEmptySquare();
-//        System.out.println();
-//        drawingStars.drawLeftBottomTriangle();
-//        System.out.println();
-//        drawingStars.drawLeftTopTriangle();
-//        System.out.println();
-//        drawingStars.drawRightTopTriangle();
-//        System.out.println();
-//        drawingStars.drawRightBottomTriangle();
-//        System.out.println();
-//        drawingStars.drawX();
-//        System.out.println();
 //        drawingStars.drawTopTriangle();
 //        System.out.println();
 //        drawingStars.drawBottomTriangle();
@@ -56,7 +44,16 @@ public class Main {
 //        boolean result = useMath.isDotInsideArea(-0.25,0.5);
 //        System.out.println(result);
 //
-        Calculator calculator = new Calculator();
+//        Calculator calculator = new Calculator();
+
+//        CharactersInOneString charactersInOneString = new CharactersInOneString();
+//        String result = charactersInOneString.getASCIIPrintDiapason();
+//        System.out.println(result);
+        ConversionFunctions conversionFunctions = new ConversionFunctions();
+        String result1 = conversionFunctions.getStrFromDouble(20);
+        System.out.println(result1);
+        double a = 2045.0;
+        System.out.println(2045.0%10);
     }
 }
 
