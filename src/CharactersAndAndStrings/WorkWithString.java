@@ -129,7 +129,13 @@ public class WorkWithString {
         if (words.equals("")) {
             return "";
         }
-        return words.substring(0, position) + " " + words.substring(position + length);
+        String resultStr = "";
+        for (int count = 0; count < words.length(); count++) {
+            if (count < position || count >= (position + length)) {
+                resultStr += words.charAt(count);
+            }
+        }
+        return resultStr;
     }
 
     public String reverseStr(String words) {

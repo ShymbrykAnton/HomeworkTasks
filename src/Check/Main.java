@@ -55,7 +55,7 @@ public class Main {
 //        System.out.println(result1);
         WorkWithString workWithString = new WorkWithString();
         String[] array = {" Слово","Корабль","Летит","Поветру","Хочет","Биотехнологию","Нагну "};
-        String result3 = workWithString.addSpaceAfterPunctuationMark("Я,был,так!далеко.Он был, так близко.");
+        String result3 = workWithString.deletePartOfString(11,8,"0123456789 123456789");
         System.out.println(result3);
     }
 }
