@@ -10,11 +10,12 @@ import java.awt.event.ActionListener;
 
 public class Calculator {
     //TODO разобраться с native Math.pow
+    //Выводы сообщений в результат, если одно из трех полей ввода пустое, дефолт не пашет
 
     public Calculator() {
         JFrame frame = new JFrame("Калькулятор");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.getContentPane().setBackground(new Color(40,120,40));
+        frame.getContentPane().setBackground(new Color(0, 241, 0, 131));
         JTextArea helpTextArea = new JTextArea();
         helpTextArea.setBounds(10,20,360,80);
         helpTextArea.setText("  Данный калькулятор умеет выполнять следующие операции: " +
@@ -34,7 +35,6 @@ public class Calculator {
         JTextField textFieldOperation = new JTextField();
         labelOperation.setBounds(45, 220, 100, 40);
         textFieldOperation.setBounds(150, 220, 190, 40);
-
         JButton button = new JButton("Посчитать");
         button.setBounds(45, 270, 295, 50);
 

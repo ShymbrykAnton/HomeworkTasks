@@ -45,7 +45,7 @@ public class Main {
 //        boolean result = useMath.isDotInsideArea(-0.25,0.5);
 //        System.out.println(result);
 //
-//        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator();
 
 //        CharactersInOneString charactersInOneString = new CharactersInOneString();
 //        String result = charactersInOneString.getASCIIPrintDiapason();
@@ -53,10 +53,10 @@ public class Main {
 //        ConversionFunctions conversionFunctions = new ConversionFunctions();
 //        String result1 = conversionFunctions.getStrFromInt(-4545);
 //        System.out.println(result1);
-        WorkWithString workWithString = new WorkWithString();
-        String[] array = {" Слово","Корабль","Летит","Поветру","Хочет","Биотехнологию","Нагну "};
-        String result3 = workWithString.deletePartOfString(11,8,"0123456789 123456789");
-        System.out.println(result3);
+//        WorkWithString workWithString = new WorkWithString();
+//        String[] array = {" Слово","Корабль","Летит","Поветру","Хочет","Биотехнологию","Нагну "};
+//        String result3 = workWithString.deletePartOfString(11,8,"0123456789 123456789");
+//        System.out.println(result3);
     }
 }
 

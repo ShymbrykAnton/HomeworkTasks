@@ -26,12 +26,12 @@ public class ButtonClickListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        final String ERROR_TEXT = "Неправильно введенная операция или число";
         double number1 = Double.parseDouble(textFieldNumber1.getText());
         double number2 = Double.parseDouble(textFieldNumber2.getText());
         String operation = textFieldOperation.getText();
         operation = operation.toLowerCase(Locale.ROOT);
         double result = 0;
-        final String ERROR_TEXT = "Неправильно введенная операция или число";
         try {
             switch (operation) {
                 case "+":

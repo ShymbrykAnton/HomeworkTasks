@@ -22,14 +22,26 @@ class ConversionFunctionsTest {
                 arguments(10050, "10050")
         );
     }
-    static Stream<Arguments> doubleTest_NOMINAL() {
+    static Stream<Arguments> getStrFromDoubleTest_NOMINAL() {
         return Stream.of(
                 arguments(0.0, "0.0"),
                 arguments(25.0, "25.0"),
                 arguments(-25.0, "-25.0"),
                 arguments(-25.4221, "-25.4221"),
                 arguments(25.4221, "25.4221"),
-                arguments(10050.0, "10050")
+                arguments(10050.0, "10050.0")
+        );
+    }
+    static Stream<Arguments> getDoubleFromStrTest_NOMINAL() {
+        return Stream.of(
+                arguments("0", 0.0),
+                arguments("", 0.0),
+                arguments("0.0", 0.0),
+                arguments("25.0", 25.0),
+                arguments("-25.0", -25.0),
+                arguments("-25.422145568", -25.422145568),
+                arguments("25.4221455", 25.4221455),
+                arguments("10050", 10050.0)
         );
     }
 
@@ -41,7 +53,7 @@ class ConversionFunctionsTest {
     }
 
     @ParameterizedTest
-    @MethodSource("doubleTest_NOMINAL")
+    @MethodSource("getStrFromDoubleTest_NOMINAL")
     void getStrFromDoubleTest(double number, String expected) {
         String actual = conversionFunctions.getStrFromDouble(number);
         Assertions.assertEquals(expected,actual);
@@ -55,8 +67,8 @@ class ConversionFunctionsTest {
     }
 
     @ParameterizedTest
-    @MethodSource("doubleTest_NOMINAL")
-    void getDoubleFromStrTest(double expected, String number) {
+    @MethodSource("getDoubleFromStrTest_NOMINAL")
+    void getDoubleFromStrTest(String number, double expected) {
         double actual = conversionFunctions.getDoubleFromStr(number);
         Assertions.assertEquals(expected,actual);
     }

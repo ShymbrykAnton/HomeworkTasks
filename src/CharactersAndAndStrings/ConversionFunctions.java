@@ -28,7 +28,7 @@ public class ConversionFunctions {
         }
         return "-" + resultStr;
     }
-//TODO Сделать подстраивание под кол-во знаков после запятой
+
     public String getStrFromDouble(double number) {
         int minus = 0;
         if (number < 0) {
@@ -37,7 +37,14 @@ public class ConversionFunctions {
         }
         int numberInt, numberDoubleToInt;
         numberInt = (int) number;
-        numberDoubleToInt = (int) (((number - numberInt) * 100) + 0.000001);
+        numberDoubleToInt = (int) (((number - numberInt) * 1000000) + 0.000001);
+        for (int countZeroAndDelete = 0; countZeroAndDelete < 10; countZeroAndDelete++) {
+            if (numberDoubleToInt % 10 == 0) {
+                numberDoubleToInt /= 10;
+            } else {
+                break;
+            }
+        }
         String resultStr = "";
         if (numberInt == 0) {
             resultStr = "0";
@@ -70,7 +77,7 @@ public class ConversionFunctions {
     }
 
     public int getIntFromStr(String number) {
-        if (number.equals("")||number.equals("0")) {
+        if (number.equals("") || number.equals("0")) {
             return 0;
         }
         int minus = 0;
@@ -101,9 +108,8 @@ public class ConversionFunctions {
         return resultInt;
     }
 
-    //строки в вещественное число
     public double getDoubleFromStr(String number) {
-        if (number.equals("")||number.equals("0.0")) {
+        if (number.equals("") || number.equals("0.0")) {
             return 0.0;
         }
         int minus = 0;

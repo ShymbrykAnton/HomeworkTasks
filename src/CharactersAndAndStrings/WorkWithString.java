@@ -3,12 +3,12 @@ package CharactersAndAndStrings;
 import java.util.Locale;
 
 public class WorkWithString {
-    //TODO реализация работы с несколькими пробелами, просмотротеть что не так когда минимальное слово - первое
     public int getLengthOfMinWord(String word) {
         if (word.trim().equals("")) {
             return 0;
         }
         word = word.toLowerCase(Locale.ROOT) + " ";
+        word = word.replaceAll("(\\s)+", " ");
         int punctuationMarkIndex = 0, saveLength = 0, saveCounter = 0, resultLength = 0;
         int firstCounter = 0;
         for (int count = 0; count < word.length(); count++) {
@@ -19,14 +19,19 @@ public class WorkWithString {
                 }
             }
             if (word.charAt(count) == ' ') {
-                saveLength = count - punctuationMarkIndex - saveCounter - 1;
-                firstCounter++;
-                saveCounter = count;
-                punctuationMarkIndex = 0;
-                if (firstCounter == 1) {
+                if (firstCounter == 0) {
+                    saveLength = count - punctuationMarkIndex - saveCounter;
+                    saveCounter = count;
+                    punctuationMarkIndex = 0;
                     resultLength = saveLength;
+                } else {
+                    saveLength = count - punctuationMarkIndex - saveCounter - 1;
+                    saveCounter = count;
+                    punctuationMarkIndex = 0;
                 }
+                firstCounter++;
             }
+
             if (resultLength > saveLength) {
                 resultLength = saveLength;
             }
@@ -110,12 +115,13 @@ public class WorkWithString {
         }
         return resultStr;
     }
-//TODO реализация, если предложение имеет несколько пробеллов между словами
+
     public int countNumberOfWords(String word) {
         if (word.equals("")) {
             return 0;
         }
         word = word.trim();
+        word = word.replaceAll("(\\s)+", " ");
         int wordCounter = 1;
         for (int counter = 0; counter < word.length(); counter++) {
             if (word.charAt(counter) == ' ') {
@@ -124,14 +130,14 @@ public class WorkWithString {
         }
         return wordCounter;
     }
-//Todo просмотреть тесты
+
     public String deletePartOfString(int position, int length, String words) {
         if (words.equals("")) {
             return "";
         }
         String resultStr = "";
         for (int count = 0; count < words.length(); count++) {
-            if (count < position || count >= (position + length)) {
+            if (count <= position - 1 || count >= (position + length)) {
                 resultStr += words.charAt(count);
             }
         }
