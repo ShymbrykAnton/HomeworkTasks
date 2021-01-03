@@ -2,6 +2,7 @@ package Check;
 
 import CharactersAndAndStrings.CharactersInOneString;
 import CharactersAndAndStrings.ConversionFunctions;
+import CharactersAndAndStrings.WorkWithString;
 import GuessNumber.GuessNumber;
 import HW1.Arrays;
 import HW1.Functions;
@@ -49,11 +50,13 @@ public class Main {
 //        CharactersInOneString charactersInOneString = new CharactersInOneString();
 //        String result = charactersInOneString.getASCIIPrintDiapason();
 //        System.out.println(result);
-        ConversionFunctions conversionFunctions = new ConversionFunctions();
-        String result1 = conversionFunctions.getStrFromDouble(20);
-        System.out.println(result1);
-        double a = 2045.0;
-        System.out.println(2045.0%10);
+//        ConversionFunctions conversionFunctions = new ConversionFunctions();
+//        String result1 = conversionFunctions.getStrFromInt(-4545);
+//        System.out.println(result1);
+        WorkWithString workWithString = new WorkWithString();
+        String[] array = {" Слово","Корабль","Летит","Поветру","Хочет","Биотехнологию","Нагну "};
+        String result3 = workWithString.addSpaceAfterPunctuationMark("Я,был,так!далеко.Он был, так близко.");
+        System.out.println(result3);
     }
 }
 

@@ -1,9 +1,5 @@
 package CharactersAndAndStrings;
 
-import sun.nio.cs.US_ASCII;
-
-import java.util.Locale;
-
 public class CharactersInOneString {
     private int count;
     String resultStr = "";
