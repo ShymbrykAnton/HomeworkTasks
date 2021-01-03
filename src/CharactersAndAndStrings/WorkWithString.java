@@ -3,6 +3,7 @@ package CharactersAndAndStrings;
 import java.util.Locale;
 
 public class WorkWithString {
+    //TODO реализация работы с несколькими пробелами, просмотротеть что не так когда минимальное слово - первое
     public int getLengthOfMinWord(String word) {
         if (word.trim().equals("")) {
             return 0;
@@ -87,7 +88,7 @@ public class WorkWithString {
         if (word.equals("")) {
             return "";
         }
-        word = word.toLowerCase(Locale.ROOT);
+        word = word.trim();
         char[] array = new char[word.length()];
         for (int count = 0; count < array.length; count++) {
             array[count] = word.charAt(count);
@@ -109,7 +110,7 @@ public class WorkWithString {
         }
         return resultStr;
     }
-
+//TODO реализация, если предложение имеет несколько пробеллов между словами
     public int countNumberOfWords(String word) {
         if (word.equals("")) {
             return 0;
@@ -123,8 +124,7 @@ public class WorkWithString {
         }
         return wordCounter;
     }
-
-    //Удалить из строки ее часть с заданной позиции и заданной длины.
+//Todo просмотреть тесты
     public String deletePartOfString(int position, int length, String words) {
         if (words.equals("")) {
             return "";
