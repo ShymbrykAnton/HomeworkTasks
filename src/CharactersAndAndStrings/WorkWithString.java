@@ -8,7 +8,7 @@ public class WorkWithString {
             return 0;
         }
         word = word.toLowerCase(Locale.ROOT) + " ";
-        word = word.replaceAll("(\\s)+", " ");
+        word = removeExtraSpaces(word);
         int punctuationMarkIndex = 0, saveLength = 0, saveCounter = 0, resultLength = 0;
         int firstCounter = 0;
         for (int count = 0; count < word.length(); count++) {
@@ -121,7 +121,7 @@ public class WorkWithString {
             return 0;
         }
         word = word.trim();
-        word = word.replaceAll("(\\s)+", " ");
+        word = removeExtraSpaces(word);
         int wordCounter = 1;
         for (int counter = 0; counter < word.length(); counter++) {
             if (word.charAt(counter) == ' ') {
@@ -129,6 +129,18 @@ public class WorkWithString {
             }
         }
         return wordCounter;
+    }
+
+    private String removeExtraSpaces(String word) {
+        String wordWithOneSpace = "";
+        for (int spaceCount = 0; spaceCount < word.length(); spaceCount++) {
+            if (spaceCount + 1 < word.length() && word.charAt(spaceCount + 1) == ' ' && word.charAt(spaceCount) == ' ') {
+                wordWithOneSpace += "";
+            } else {
+                wordWithOneSpace += word.charAt(spaceCount);
+            }
+        }
+        return wordWithOneSpace;
     }
 
     public String deletePartOfString(int position, int length, String words) {

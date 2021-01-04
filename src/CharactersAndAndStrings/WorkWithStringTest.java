@@ -14,7 +14,7 @@ class WorkWithStringTest {
 
     static Stream<Arguments> getLengthOfMinWordTest_NOMINAL() {
         return Stream.of(
-                arguments("Ваших душ безлиственную   осень", 3),
+                arguments("Ваших душ безлиственную      осень", 3),
                 arguments("Мне нравится, когда каменья брани", 3),
                 arguments("Летят в меня, как град рыгающей грозы,", 1),
                 arguments("", 0),
@@ -64,7 +64,7 @@ class WorkWithStringTest {
                 arguments("Ваших душ безлиственную осень", 4),
                 arguments("Летят в меня, как град рыгающей грозы,", 7),
                 arguments("55555 666666 88888888 @4444, 666666", 5),
-                arguments("В1 ту страну,   куда мы п.", 6),
+                arguments("В1 ту страну,     куда мы п.", 6),
                 arguments("И cнова поле ", 3)
         );
     }
