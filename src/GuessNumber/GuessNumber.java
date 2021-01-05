@@ -41,7 +41,8 @@ public class GuessNumber {
 
     public void generateNumber() {
         randomValue = random.nextInt((max - min) + 1) + min;
-        System.out.println("Число было сгенерировано. В любой момент при вводе комманды \"exit\" программа завершит свою работу ");
+        System.out.println(randomValue);
+        System.out.println("Число было сгенерировано. Можешь начинать угадывать его). В любой момент при вводе комманды \"exit\" программа завершит свою работу ");
         guessNumber();
     }
 
@@ -49,6 +50,7 @@ public class GuessNumber {
         for (int tryCounter = 0; tryCounter < tryNumber; tryCounter++) {
             try {
                 tryingGuess = scanner.nextInt();
+                scanner.nextLine();
             } catch (InputMismatchException exception) {
                 userCommand = scanner.nextLine();
                 if (userCommand.equalsIgnoreCase("exit")) {
@@ -59,8 +61,8 @@ public class GuessNumber {
                 }
             }
             if (tryingGuess == randomValue) {
-                System.out.println("Поздравляю, вы угадали число за " + (tryCounter + 1) + " попыток, до свидания");
-                break;
+                System.out.println("Поздравляю, вы угадали число за " + (tryCounter + 1) + " попыток.");
+                exit();
             }
             if (tryCounter == 0) {
                 System.out.println("Не угадал, попробуй ещё");
@@ -75,8 +77,8 @@ public class GuessNumber {
                 }
             }
             if (tryCounter == tryNumber - 1) {
-                System.out.println("Колличество попыток закончилось, а ты всё так и не догадался какое число я задумал, до свидания");
-                System.exit(0);
+                System.out.println("Колличество попыток закончилось, а ты всё так и не догадался какое число я задумал.");
+                exit();
             }
         }
     }

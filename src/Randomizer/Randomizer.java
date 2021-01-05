@@ -16,6 +16,7 @@ public class Randomizer {
         System.out.println("Введите минимальное число диапазона (От 1 до 500)");
         try {
             min = scanner.nextInt();
+            scanner.nextLine();
         } catch (InputMismatchException exception) {
             System.out.println("Введенные вами символы  - не цифры");
             System.exit(0);
@@ -31,6 +32,7 @@ public class Randomizer {
         System.out.println("Введите максимальное число диапазона (От минимального числа до 500)");
         try {
             max = scanner.nextInt();
+            scanner.nextLine();
         } catch (InputMismatchException exception) {
             System.out.println("Введенные вами символы  - не цифры");
             System.exit(0);
@@ -74,20 +76,21 @@ public class Randomizer {
             exit();
         }
         while (true) {
-            int randomValue = random.nextInt((max - min) + 1) + min;
-            if (array[randomValue - min] == 0) {
-                array[randomValue - min] = randomValue;
-                System.out.println(randomValue);
-                count++;
-                menu();
+        int randomValue = random.nextInt((max - min) + 1) + min;
+        if (array[randomValue - min] == 0) {
+            array[randomValue - min] = randomValue;
+            System.out.println(randomValue);
+            count++;
+            menu();
             }
         }
     }
 
     public void exit() {
-        System.out.println("Вы правда хотите выйти? Yes (выход из программы) / No (перезапуск программы)");
+        System.out.println("Вы хотите завершить работу программы? Yes (выход из программы) / No (перезапуск программы)");
         String userCommand = scanner.nextLine();
         if (userCommand.equalsIgnoreCase("Yes")) {
+            System.out.println("До новых встреч!");
             System.exit(0);
         }
         if (userCommand.equalsIgnoreCase("No")) {

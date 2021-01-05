@@ -30,8 +30,8 @@ public class Main {
 //        Randomizer randomizer = new Randomizer();
 //        randomizer.start();
 
-//        GuessNumber guessNumber = new GuessNumber(5, 1, 100);
-//        guessNumber.start();
+        GuessNumber guessNumber = new GuessNumber(5, 1, 100);
+        guessNumber.start();
 
 //        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 //        randomNumberGenerator.getRandomTimesRandomValues();
@@ -53,10 +53,10 @@ public class Main {
 //        ConversionFunctions conversionFunctions = new ConversionFunctions();
 //        String result1 = conversionFunctions.getStrFromInt(-4545);
 //        System.out.println(result1);
-        WorkWithString workWithString = new WorkWithString();
+//        WorkWithString workWithString = new WorkWithString();
 //        String[] array = {" Слово","Корабль","Летит","Поветру","Хочет","Биотехнологию","Нагну "};
-        int result3 = workWithString.getLengthOfMinWord("Ваших душ безлиственную       осень");
-        System.out.println(result3);
+//        int result3 = workWithString.getLengthOfMinWord("Ваших душ безлиственную       осень");
+//        System.out.println(result3);
     }
 }
 
