@@ -1,10 +1,7 @@
 package ConverterSwing.ButtonLesteners;
 
-import ConverterSwing.CategoryFactory;
-import ConverterSwing.View.Converter;
+import ConverterSwing.Factory.CategoryFactory;
 import ConverterSwing.blogic.IConverter;
-import ConverterSwing.blogic.LengthConverter.FromAndToMeters;
-import SimpleCalcSwing.Blogic.Math.Calculations;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

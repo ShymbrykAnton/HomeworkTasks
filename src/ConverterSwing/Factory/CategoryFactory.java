@@ -1,4 +1,4 @@
-package ConverterSwing;
+package ConverterSwing.Factory;
 
 import ConverterSwing.blogic.IConverter;
 import ConverterSwing.blogic.LengthConverter.FromAndToMeters;
