@@ -22,7 +22,7 @@ public class CategoryFactory {
 
     public IConverter getInstanceByCategory(String category) {
         IConverter converter;
-        switch (category.toLowerCase(Locale.ROOT)) {
+        switch (category.toLowerCase(Locale.ROOT).trim()) {
             case Category.LENGTH:
                 converter = lengthConverter;
                 break;

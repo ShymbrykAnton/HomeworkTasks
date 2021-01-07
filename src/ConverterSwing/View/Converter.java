@@ -2,8 +2,6 @@ package ConverterSwing.View;
 
 import ConverterSwing.ButtonLesteners.HelpButtonClickListener;
 import ConverterSwing.ButtonLesteners.MainButtonClickListener;
-import ConverterSwing.blogic.IConverter;
-import ConverterSwing.blogic.LengthConverter.FromAndToMeters;
 
 
 import javax.swing.*;
@@ -11,7 +9,6 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class Converter {
-    IConverter converter;
     public Converter() {
         JFrame converterMainWindow = new JFrame("Конвертер");
         converterMainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

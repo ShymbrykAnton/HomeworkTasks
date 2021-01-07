@@ -1,7 +1,6 @@
 package ConverterSwing.ButtonLesteners;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +9,7 @@ public class HelpButtonClickListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JFrame helpFrame = new JFrame("Help");
         JTextArea helpTextArea = new JTextArea();
-        helpTextArea.setBounds(0,0,500,500);
+        helpTextArea.setBounds(0, 0, 500, 500);
         helpTextArea.setText("        Данный конвертер переводит одни величины в другие в выбранной категории. " +
                 "\n Для правильной работы конвертера в поле \"Категория конвертируемых величин\"" +
                 "\n нужно ввести одну из доступных категорий(см. ниже). Далее нужно выбрать" +
