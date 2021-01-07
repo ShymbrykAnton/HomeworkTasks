@@ -27,7 +27,6 @@ public class MainButtonClickListener implements ActionListener {
         this.textAreaResult = textAreaResult;
 
     }
-    //todo обработка ошибок
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -48,6 +47,5 @@ public class MainButtonClickListener implements ActionListener {
         } catch (InputMismatchException exception) {
             textAreaResult.setText(exception.getMessage());
         }
-
     }
 }
