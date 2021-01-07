@@ -3,6 +3,7 @@ package ConverterSwing.blogic.LengthConverter;
 import ConverterSwing.blogic.IConverter;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 
 import static ConverterSwing.Utils.Constants.Length;
 
@@ -10,7 +11,7 @@ public class FromAndToMeters implements IConverter {
     double valueInMeters;
 
     public void convertSomethingToStandard(String cmd1, double Value) {
-        switch (cmd1) {
+        switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Length.METER:
                 valueInMeters = Value;
                 break;
@@ -42,7 +43,7 @@ public class FromAndToMeters implements IConverter {
 
     public double convertStandardToSomething(String cmd2) {
         double result;
-        switch (cmd2) {
+        switch (cmd2.toLowerCase(Locale.ROOT).trim()) {
             case Length.METER:
                 result = valueInMeters;
                 break;

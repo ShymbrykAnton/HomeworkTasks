@@ -3,6 +3,7 @@ package ConverterSwing.blogic.WeightConverter;
 import ConverterSwing.blogic.IConverter;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 
 import static ConverterSwing.Utils.Constants.Weight;
 
@@ -10,7 +11,7 @@ public class FromAndToGrams implements IConverter {
     double valueInKilograms;
 
     public void convertSomethingToStandard(String cmd1, double Value) {
-        switch (cmd1) {
+        switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Weight.KILOGRAM:
                 valueInKilograms = Value;
                 break;
@@ -42,7 +43,7 @@ public class FromAndToGrams implements IConverter {
 
     public double convertStandardToSomething(String cmd2) {
         double result;
-        switch (cmd2) {
+        switch (cmd2.toLowerCase(Locale.ROOT).trim()) {
             case Weight.KILOGRAM:
                 result = valueInKilograms;
                 break;
@@ -68,7 +69,7 @@ public class FromAndToGrams implements IConverter {
                 result = valueInKilograms * 1.0936133;
                 break;
             default:
-                throw new InputMismatchException("Вы неправильно ввели вторую размерность");
+                throw new InputMismatchException ("Вы неправильно ввели вторую размерность");
         }
         return result;
     }

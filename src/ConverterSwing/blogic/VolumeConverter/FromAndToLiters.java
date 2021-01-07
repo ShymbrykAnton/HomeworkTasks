@@ -3,6 +3,7 @@ package ConverterSwing.blogic.VolumeConverter;
 import ConverterSwing.blogic.IConverter;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 
 import static ConverterSwing.Utils.Constants.Volume;
 
@@ -10,7 +11,7 @@ public class FromAndToLiters implements IConverter {
     double valueInLiters;
 
     public void convertSomethingToStandard(String cmd1, double Value) {
-        switch (cmd1) {
+        switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Volume.LITERS:
                 valueInLiters = Value;
                 break;
@@ -42,7 +43,7 @@ public class FromAndToLiters implements IConverter {
 
     public double convertStandardToSomething(String cmd2) {
         double result;
-        switch (cmd2) {
+        switch (cmd2.toLowerCase(Locale.ROOT).trim()) {
             case Volume.LITERS:
                 result = valueInLiters;
                 break;

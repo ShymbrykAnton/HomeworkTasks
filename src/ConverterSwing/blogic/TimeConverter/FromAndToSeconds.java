@@ -3,6 +3,7 @@ package ConverterSwing.blogic.TimeConverter;
 import ConverterSwing.blogic.IConverter;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 
 import static ConverterSwing.Utils.Constants.Time;
 
@@ -10,7 +11,7 @@ public class FromAndToSeconds implements IConverter {
     double valueInSeconds;
 
     public void convertSomethingToStandard(String cmd1, double Value) {
-        switch (cmd1) {
+        switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Time.SECONDS:
                 valueInSeconds = Value;
                 break;
@@ -39,7 +40,7 @@ public class FromAndToSeconds implements IConverter {
 
     public double convertStandardToSomething(String cmd2) {
         double result;
-        switch (cmd2) {
+        switch (cmd2.toLowerCase(Locale.ROOT).trim()) {
             case Time.SECONDS:
                 result = valueInSeconds;
                 break;

@@ -51,10 +51,10 @@ public class Constants {
         public final static String CUBIC_INCH = "inch3";
     }
     public static class Category {
-        public final static String LENGTH = "kilogram";
-        public final static String TEMPERATURE = "gram";
-        public final static String TIME = "eng pound";
-        public final static String VOLUME = "pound";
-        public final static String WEIGHT = "stone";
+        public final static String LENGTH = "length";
+        public final static String TEMPERATURE = "temperature";
+        public final static String TIME = "time";
+        public final static String VOLUME = "volume";
+        public final static String WEIGHT = "weight";
     }
 }

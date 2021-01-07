@@ -9,6 +9,7 @@ import SimpleCalcSwing.Blogic.Math.Calculations;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.InputMismatchException;
 
 public class MainButtonClickListener implements ActionListener {
     private final CategoryFactory factory = new CategoryFactory();
@@ -37,13 +38,14 @@ public class MainButtonClickListener implements ActionListener {
         String convertFrom = textFieldConvertFrom.getText();
         String convertTo = textFieldConvertTo.getText();
         double value = Double.parseDouble(textFieldValue.getText());
-        if (convertFrom != null && convertTo != null) {
+        try {
             iConverter.convertSomethingToStandard(convertFrom, value);
             String result = String.valueOf(iConverter.convertStandardToSomething(convertTo));
-            textAreaResult.setText("В категории " + category + "Была произведена конвертация.\n" +
-                    value + " " + convertFrom + " = " + result + " " + convertTo + ".");
-        } else {
-            textAreaResult.setText("Неккоректно введенные данные (см. ?)");
+            textAreaResult.setText("  Выбранная категория: " + category + ".\n" +
+                    "  " + value + " " + convertFrom + " = " + result + " " + convertTo + ".");
+        } catch (InputMismatchException exception) {
+            textAreaResult.setText(exception.getMessage());
+            return;
         }
 
     }

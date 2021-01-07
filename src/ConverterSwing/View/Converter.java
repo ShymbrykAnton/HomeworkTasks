@@ -46,7 +46,7 @@ public class Converter {
         JLabel labelResult = new JLabel("Результат:");
         JTextArea textAreaResult = new JTextArea();
         labelResult.setBounds(45, 270, 100, 40);
-        textAreaResult.setBounds(150, 270, 190, 40);
+        textAreaResult.setBounds(120, 270, 250, 40);
 
         converterMainWindow.add(helpButton);
         converterMainWindow.add(labelCategory);
