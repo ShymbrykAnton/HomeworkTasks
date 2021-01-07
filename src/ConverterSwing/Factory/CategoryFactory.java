@@ -39,7 +39,7 @@ public class CategoryFactory {
                 converter = weightConverter;
                 break;
             default:
-                throw new InputMismatchException("Неккоректно введенные данные (см.?).");
+                throw new InputMismatchException("Вы неправильно ввели категорию");
         }
         return converter;
     }

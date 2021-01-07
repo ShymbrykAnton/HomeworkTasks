@@ -28,13 +28,13 @@ public class FromAndToGrams implements IConverter {
                 valueInKilograms = Value * 6.35029318;
                 break;
             case Weight.RUS_POUND:
-                valueInKilograms = Value * 2.441899995502;
+                valueInKilograms = Value * 0.409512037;
                 break;
             case Weight.CUBIC_FOOT:
-                valueInKilograms = Value * 0.3048;
+                valueInKilograms = Value * 28.32;
                 break;
             case Weight.CUBIC_INCH:
-                valueInKilograms = Value * 0.9144;
+                valueInKilograms = Value * 0.013963636363637;
                 break;
             default:
                 throw new InputMismatchException("Вы неправильно ввели первую размерность");
@@ -48,28 +48,28 @@ public class FromAndToGrams implements IConverter {
                 result = valueInKilograms;
                 break;
             case Weight.GRAM:
-                result = valueInKilograms * 0.001;
+                result = valueInKilograms * 1000;
                 break;
             case Weight.ENG_POUND:
-                result = valueInKilograms * 0.000621371192;
+                result = valueInKilograms * 2.2046;
                 break;
             case Weight.POUND:
-                result = valueInKilograms * 0.000539956803;
+                result = valueInKilograms * 2.20462262;
                 break;
             case Weight.STONE:
-                result = valueInKilograms * 0.00455672208;
+                result = valueInKilograms * 0.157473044;
                 break;
             case Weight.RUS_POUND:
-                result = valueInKilograms * 0.000179985601;
+                result = valueInKilograms * 2.44193066;
                 break;
             case Weight.CUBIC_FOOT:
-                result = valueInKilograms * 3.2808399;
+                result = valueInKilograms * 0.035;
                 break;
             case Weight.CUBIC_INCH:
-                result = valueInKilograms * 1.0936133;
+                result = valueInKilograms * 71.61458;
                 break;
             default:
-                throw new InputMismatchException ("Вы неправильно ввели вторую размерность");
+                throw new InputMismatchException("Вы неправильно ввели вторую размерность");
         }
         return result;
     }

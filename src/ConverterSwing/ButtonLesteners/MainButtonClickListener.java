@@ -32,7 +32,11 @@ public class MainButtonClickListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String category = textFieldCategory.getText();
-        iConverter = factory.getInstanceByCategory(category);
+        try {
+            iConverter = factory.getInstanceByCategory(category);
+        } catch (InputMismatchException exception) {
+            textAreaResult.setText(exception.getMessage());
+        }
         String convertFrom = textFieldConvertFrom.getText();
         String convertTo = textFieldConvertTo.getText();
         double value = Double.parseDouble(textFieldValue.getText());

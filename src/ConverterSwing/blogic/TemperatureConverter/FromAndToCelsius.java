@@ -22,19 +22,19 @@ public class FromAndToCelsius implements IConverter {
                 valueInCelsius = (Value - 32) / 1.8;
                 break;
             case Temperature.REAUMUR:
-                valueInCelsius = Value * 0.8;
+                valueInCelsius = Value / 0.8;
                 break;
             case Temperature.ROMER:
-                valueInCelsius = (40 / 21) * (Value - 7.5);
+                valueInCelsius = (40.0 / 21) * (Value - 7.5);
                 break;
             case Temperature.RANKIN:
-                valueInCelsius = (Value - 491.67) * (5 / 9);
+                valueInCelsius = (Value - 491.67) * (5.0 / 9);
                 break;
             case Temperature.NEWTON:
-                valueInCelsius = (100 / 33) * Value;
+                valueInCelsius = (100.0 / 33) * Value;
                 break;
             case Temperature.DELISLE:
-                valueInCelsius = 100 - (Value * (2 / 3));
+                valueInCelsius = (100 + Value) * (2.0 / 3);
                 break;
             default:
                 throw new InputMismatchException("Вы неправильно ввели первую размерность");
@@ -54,22 +54,22 @@ public class FromAndToCelsius implements IConverter {
                 result = (valueInCelsius * 1.8) + 32;
                 break;
             case Temperature.REAUMUR:
-                result = valueInCelsius * 1.25;
+                result = valueInCelsius * 0.8;
                 break;
             case Temperature.ROMER:
-                result = (21 / 40) * (valueInCelsius) + 7.5;
+                result = (21.0 / 40) * (valueInCelsius) + 7.5;
                 break;
             case Temperature.RANKIN:
-                result = (valueInCelsius + 273.15) * (9 / 5);
+                result = (valueInCelsius + 273.15) * (9.0 / 5);
                 break;
             case Temperature.NEWTON:
-                result = (33 / 100) * valueInCelsius;
+                result = (33.0 / 100) * valueInCelsius;
                 break;
             case Temperature.DELISLE:
-                result = (100 - valueInCelsius) * (3 / 2);
+                result = (100 - valueInCelsius) * (3.0 / 2);
                 break;
             default:
-                throw new InputMismatchException("Вы неправильно ввели первую размерность");
+                throw new InputMismatchException("Вы неправильно ввели вторую размерность");
         }
         return result;
     }
