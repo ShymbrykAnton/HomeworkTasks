@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Calculator</title>
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="Style/cssCalculator.css">
 </head>
 <body>
-
+<h2>Калькулятор</h2>
+<p>Данный <i>калькулятор</i> предназначен для выполнения операций суммирования,
+    вычитания, деления, умножения, вычисление корня n-степени и возведения числа в n-степень, где n - второе число.</p>
+<hr>
+<div id="calculator">
+    <p><b>Введите первое число в первое и второе поле</b></p>
+    <p id="inputNumbers">
+        <label for="Число 1"></label><input required id="Число 1" type=number size="18">
+        <label for="Число 2"></label><input required id="Число 2" type=number size="18">
+    </p>
+    <p id="operators"><input type="button" value="+" class="operator" onclick="calculator(value)">
+        <input type="button" value="-" class="operator" onclick="calculator(value)">
+        <input type="button" value="*" class="operator" onclick="calculator(value)">
+        <input type="button" value="/" class="operator" onclick="calculator(value)">
+        <input type="button" value=&#8730; class="operator" onclick="calculator(value)">
+        <input type="button" value="^" class="operator" onclick="calculator(value)">
+    </p>
+    <p id="result">Здесь будет ваш результат :)</p>
+    <script src=js/Calculations.js></script>
+</div>
 </body>
 </html>
