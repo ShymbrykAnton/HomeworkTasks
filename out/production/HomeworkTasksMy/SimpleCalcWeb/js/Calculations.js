@@ -48,10 +48,10 @@ function calculator(operator) {
             case'/':
                 result = getDivision(number1, number2)
                 break;
-            case 'Корень':
+            case '\u221A':
                 result = getRoot(number1, number2);
                 break;
-            case'Степень':
+            case'^':
                 result = getPow(number1, number2)
                 break;
             default:
@@ -62,5 +62,9 @@ function calculator(operator) {
         (Error) {
         document.getElementById("result").innerHTML = "На ноль делить нельзя";
     }
-    document.getElementById("result").innerHTML = number1 + " " + operator + " " + number2 + " = " + result;
+    if (operator === '\u221A') {
+        document.getElementById("result").innerHTML = number2 + "-степень корня, " + operator + " " + number1 + " = " + result;
+    } else {
+        document.getElementById("result").innerHTML = number1 + " " + operator + " " + number2 + " = " + result;
+    }
 }

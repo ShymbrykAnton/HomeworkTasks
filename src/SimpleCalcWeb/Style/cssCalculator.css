@@ -1,21 +1,54 @@
-body {
-    background-color: darkturquoise;
-}
+html {
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 118, 149, 0.7287289915966386) 35%, rgba(0, 212, 255, 1) 100%) no-repeat;
+    font-family: "Bookman Old Style", serif;}
 
 h2 {
-    height: 60px;
-    font-size: 50px;
+    font-size: 40px;
+    color: #7b89b0;
     text-align: center;
 }
+
+#startText {
+    font-size: 25px;
+}
+
 div {
+
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.number {
+    font-size: 30px;
+    margin: 0 auto;
     text-align: center;
 }
-#inputNumbers {
 
+.operator {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    cursor: pointer;
 }
-#operators {
 
+#inputNumberText {
+    font-size: 25px;
 }
+
 #result {
+    font-size: 30px;
+    font-weight: bold;
+}
 
+#image {
+    bottom: 0;
+    display: block;
+    width: 232px;
+    height: 62px;
+    position: fixed;
+    right: 0;
+    border: rgba(0, 212, 255, 1);
 }

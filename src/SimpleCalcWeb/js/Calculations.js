@@ -62,7 +62,7 @@ function calculator(operator) {
         (Error) {
         document.getElementById("result").innerHTML = "На ноль делить нельзя";
     }
-    if (operator !== '^') {
+    if (operator === '\u221A') {
         document.getElementById("result").innerHTML = number2 + "-степень корня, " + operator + " " + number1 + " = " + result;
     } else {
         document.getElementById("result").innerHTML = number1 + " " + operator + " " + number2 + " = " + result;

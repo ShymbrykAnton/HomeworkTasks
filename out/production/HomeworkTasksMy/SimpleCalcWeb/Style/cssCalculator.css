@@ -1,21 +1,37 @@
 body {
-    background-color: darkturquoise;
+    background: #4ab307;
 }
 
 h2 {
-    height: 60px;
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
+    padding-bottom: -45px;
+}
+#startText {
+    font-size: 30px;
 }
 div {
     text-align: center;
+    margin:0 auto;
 }
-#inputNumbers {
 
+
+.number {
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
 }
-#operators {
-
+.operator {
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    cursor: pointer;
 }
 #result {
-
+    padding: 10px;
+}
+#image {
+    margin: 0 auto;
+    border: #4ab307;
 }
