@@ -18,6 +18,7 @@ import Stars.DrawingStars;
 
 public class Main {
     public static void main(String[] args) {
+
 //        ConditionalOperators operators = new ConditionalOperators();
 //        String result1 = operators.getMarkByRating(83);
 //        System.out.println("Результат: " + result1);

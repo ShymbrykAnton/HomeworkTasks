@@ -1,18 +1,30 @@
-body {
-    background: #4ab307;
+@font-face {
+    font-family: EchoRevival;
+    src: url("../Fonts/EchoRevival.otf") format("opentype");
+}
+
+html {
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 118, 149, 0.7287289915966386) 35%, rgba(0, 212, 255, 1) 100%) no-repeat;
+    font-family: EchoRevival, serif;
 }
 
 h2 {
-    font-size: 60px;
+    font-size: 40px;
+    color: #a40000;
     text-align: center;
-    padding-bottom: -45px;
 }
+
 #startText {
-    font-size: 30px;
+    font-size: 25px;
+    color: #050202;
 }
+
 div {
+
     text-align: center;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 
@@ -20,18 +32,33 @@ div {
     font-size: 30px;
     margin: 0 auto;
     text-align: center;
+
 }
+
 .operator {
-    padding: 5px;
     height: 40px;
     width: 40px;
     font-size: 20px;
     cursor: pointer;
 }
-#result {
-    padding: 10px;
+
+#inputNumberText {
+    font-size: 30px;
+    color: #000000;
 }
+
+#result {
+    font-family: "Times New Roman",sans-serif;
+    font-size: 30px;
+    color: #000000;
+}
+
 #image {
-    margin: 0 auto;
-    border: #4ab307;
+    bottom: 0;
+    display: block;
+    width: 232px;
+    height: 62px;
+    position: fixed;
+    right: 0;
+    border: rgba(0, 212, 255, 1);
 }
