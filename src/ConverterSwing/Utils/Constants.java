@@ -43,12 +43,11 @@ public class Constants {
     public static class Weight {
         public final static String KILOGRAM = "kilogram";
         public final static String GRAM = "gram";
+        public final static String CARAT = "carat";
         public final static String ENG_POUND = "eng pound";
         public final static String POUND = "pound";
         public final static String STONE = "stone";
         public final static String RUS_POUND = "rus pound";
-        public final static String CUBIC_FOOT = "foot3";
-        public final static String CUBIC_INCH = "inch3";
     }
     public static class Category {
         public final static String LENGTH = "length";

@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class WorkWithStringTest {
-    WorkWithString workWithString = new WorkWithString();
+    private final WorkWithString workWithString = new WorkWithString();
 
     static Stream<Arguments> getLengthOfMinWordTest_NOMINAL() {
         return Stream.of(

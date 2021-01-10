@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class FunctionsTest {
-    Functions functions = new Functions();
+    private final Functions functions = new Functions();
     static Stream<Arguments> getStringFromNumberOrNumberFromStringTest_NOMINAL() {
         return Stream.of(
                 arguments(0,"Ноль"),

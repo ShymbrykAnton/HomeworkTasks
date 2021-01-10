@@ -10,12 +10,12 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 public class ArraysTest {
-    Arrays arrays = new Arrays();
-    static int[] array1 = new int[]{-8, 0, 1, -123, 8, 9, 10};
-    static int[] array2 = new int[]{23, 0, 1, 6, 8, 9, 1050};
-    static int[] array3 = new int[]{125, 160, 50, 50, 523, 25};
-    static int[] array4 = new int[]{-293};
-    static int[] array5 = new int[]{};
+    private  final Arrays arrays = new Arrays();
+    private final static int[] array1 = new int[]{-8, 0, 1, -123, 8, 9, 10};
+    private final static int[] array2 = new int[]{23, 0, 1, 6, 8, 9, 1050};
+    private final static int[] array3 = new int[]{125, 160, 50, 50, 523, 25};
+    private final static int[] array4 = new int[]{-293};
+    private final static int[] array5 = new int[]{};
 
 
     static Stream<Arguments> getMinElementInArrayTest_NOMINAL() {

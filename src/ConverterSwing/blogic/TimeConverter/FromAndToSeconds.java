@@ -8,30 +8,30 @@ import java.util.Locale;
 import static ConverterSwing.Utils.Constants.Time;
 
 public class FromAndToSeconds implements IConverter {
-    double valueInSeconds;
+    private double valueInSeconds;
 
-    public void convertSomethingToStandard(String cmd1, double Value) {
+    public void convertSomethingToStandard(String cmd1, double value) {
         switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Time.SECONDS:
-                valueInSeconds = Value;
+                valueInSeconds = value;
                 break;
             case Time.MIN:
-                valueInSeconds = Value * 60;
+                valueInSeconds = value * 60;
                 break;
             case Time.HOUR:
-                valueInSeconds = Value * 3600;
+                valueInSeconds = value * 3600;
                 break;
             case Time.DAYS:
-                valueInSeconds = Value * 86_400;
+                valueInSeconds = value * 86_400;
                 break;
             case Time.WEEKS:
-                valueInSeconds = Value * 604_800;
+                valueInSeconds = value * 604_800;
                 break;
             case Time.MONTHS:
-                valueInSeconds = Value * 2_629_743.83;
+                valueInSeconds = value * 2_629_743.83;
                 break;
             case Time.YEARS:
-                valueInSeconds = Value * 31_556_926;
+                valueInSeconds = value * 31_556_926;
                 break;
             default:
                 throw new InputMismatchException("Вы неправильно ввели первую размерность");

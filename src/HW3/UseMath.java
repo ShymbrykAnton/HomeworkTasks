@@ -3,8 +3,8 @@ package HW3;
 import java.text.DecimalFormat;
 
 public class UseMath {
-    private final static String C = "#0.00";
-    private final static double G = 9.80665;
+    private final String C = "#0.00";
+    private final double G = 9.80665;
 
     public String getFlightDistanceByDegree(double speed, double angle) {
         if (speed < 0 || angle < 0) {
@@ -12,7 +12,7 @@ public class UseMath {
             System.exit(0);
         }
         speed *= (1000.0 / 3600);
-        double flightDistance = Math.pow(speed, 2) / G * Math.sin(Math.toRadians(2 * angle));
+        double flightDistance = (Math.pow(speed, 2) / G) * Math.sin(Math.toRadians(2 * angle));
         speed *= (3600 / 1000.0);
         String result = new DecimalFormat(C).format(flightDistance);
         return "Расстояние полёта снаряда при скорости: " + speed + " км/ч и угле наклона ствола: " + angle + " градусов равно: " + result + " метров";
@@ -24,7 +24,7 @@ public class UseMath {
             System.exit(0);
         }
         speed *= (1000.0 / 3600);
-        double flightDistance = Math.pow(speed, 2) / G * Math.sin(2 * angle);
+        double flightDistance = (Math.pow(speed, 2) / G) * Math.sin(2 * angle);
         speed *= (3600 / 1000.0);
         String result = new DecimalFormat(C).format(flightDistance);
         return "Расстояние полёта снаряда при скорости: " + speed + " км/ч и угле наклона ствола: " + angle + " радианов равно: " + result + " метров";

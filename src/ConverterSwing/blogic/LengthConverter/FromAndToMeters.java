@@ -8,33 +8,33 @@ import java.util.Locale;
 import static ConverterSwing.Utils.Constants.Length;
 
 public class FromAndToMeters implements IConverter {
-    double valueInMeters;
+    private double valueInMeters;
 
-    public void convertSomethingToStandard(String cmd1, double Value) {
+    public void convertSomethingToStandard(String cmd1, double value) {
         switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Length.METER:
-                valueInMeters = Value;
+                valueInMeters = value;
                 break;
             case Length.KILOMETER:
-                valueInMeters = Value * 1000;
+                valueInMeters = value * 1000;
                 break;
             case Length.MILE:
-                valueInMeters = Value * 1609.344;
+                valueInMeters = value * 1609.344;
                 break;
             case Length.NAUTICAL_MILE:
-                valueInMeters = Value * 1852;
+                valueInMeters = value * 1852;
                 break;
             case Length.CABLE:
-                valueInMeters = Value * 219.45600;
+                valueInMeters = value * 219.45600;
                 break;
             case Length.LEAGUE:
-                valueInMeters = Value * 5556;
+                valueInMeters = value * 5556;
                 break;
             case Length.FOOT:
-                valueInMeters = Value * 0.3048;
+                valueInMeters = value * 0.3048;
                 break;
             case Length.YARD:
-                valueInMeters = Value * 0.9144;
+                valueInMeters = value * 0.9144;
                 break;
             default:
                 throw new InputMismatchException("Вы неправильно ввели первую размерность");

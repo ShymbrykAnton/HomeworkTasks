@@ -5,11 +5,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Randomizer {
-    Scanner scanner = new Scanner(System.in);
-    Random random = new Random();
-    String userCommand;
-    int min, max, count;
-    int[] array = new int[max - min + 1];
+    private final Scanner scanner = new Scanner(System.in);
+    private final Random random = new Random();
+    private String userCommand;
+    private int min;
+    private int max;
+    private int count;
+    private int[] array = new int[max - min + 1];
 
     public void start() {
         System.out.println("Добро пожаловать в рандомайзер.");
@@ -76,19 +78,19 @@ public class Randomizer {
             exit();
         }
         while (true) {
-        int randomValue = random.nextInt((max - min) + 1) + min;
-        if (array[randomValue - min] == 0) {
-            array[randomValue - min] = randomValue;
-            System.out.println(randomValue);
-            count++;
-            menu();
+            int randomValue = random.nextInt((max - min) + 1) + min;
+            if (array[randomValue - min] == 0) {
+                array[randomValue - min] = randomValue;
+                System.out.println(randomValue);
+                count++;
+                menu();
             }
         }
     }
 
     public void exit() {
         System.out.println("Вы хотите завершить работу программы? Yes (выход из программы) / No (перезапуск программы)");
-        String userCommand = scanner.nextLine();
+        userCommand = scanner.nextLine();
         if (userCommand.equalsIgnoreCase("Yes")) {
             System.out.println("До новых встреч!");
             System.exit(0);

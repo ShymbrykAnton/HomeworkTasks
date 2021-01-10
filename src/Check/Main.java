@@ -35,19 +35,19 @@ public class Main {
 //        Randomizer randomizer = new Randomizer();
 //        randomizer.start();
 //
-//        GuessNumber guessNumber = new GuessNumber(5, 1, 100);
+//        GuessNumber guessNumber = new GuessNumber(5, 1, 10);
 //        guessNumber.start();
-//
+
 //        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-//        randomNumberGenerator.getRandomTimesRandomValues();
+//        randomNumberGenerator.getRandomValue();
 //
 //        DrawingStars drawingStars = new DrawingStars();
-//        drawingStars.drawTopTriangle();
+//        drawingStars.drawEmptySquare();
 //        System.out.println();
-//        drawingStars.drawBottomTriangle();
+//        drawingStars.drawSquare();
 //
 //        UseMath useMath = new UseMath();
-//        boolean result = useMath.isDotInsideArea(-0.25,0.5);
+//        String result = useMath.calculateExpression(25);
 //        System.out.println(result);
 //        Functions functions = new Functions();
 //        functions.getStringFromNumber(23);
@@ -55,16 +55,10 @@ public class Main {
 //        Calculator calculator = new Calculator();
 //
 //        CharactersInOneString charactersInOneString = new CharactersInOneString();
-//        String result5 = charactersInOneString.getASCIIPrintDiapason();
+//        String result5 = charactersInOneString.getNumbersFrom0to9();
 //        System.out.println(result5);
-//        ConversionFunctions conversionFunctions = new ConversionFunctions();
-//        String result6 = conversionFunctions.getStrFromInt(-4545);
-//        System.out.println(result6);
-//        WorkWithString workWithString = new WorkWithString();
-//        String[] array23 = {" Слово","Корабль","Летит","Поветру","Хочет","Биотехнологию","Нагну "};
-//        int result23 = workWithString.getLengthOfMinWord("Ваших душ безлиственную       осень");
-//        System.out.println(result23);
-        Converter converter = new Converter();
+
+//        Converter converter = new Converter();
     }
 }
 

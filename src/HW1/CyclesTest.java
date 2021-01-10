@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class CyclesTest {
-    Cycles cycles = new Cycles();
+    private final Cycles cycles = new Cycles();
 
     static Stream<Arguments> getEvenSumNumberTest_NOMINAL() {
         return Stream.of(

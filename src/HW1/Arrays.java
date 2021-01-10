@@ -1,7 +1,7 @@
 package HW1;
 
 public class Arrays {
-    StringBuilder resultArray = new StringBuilder();
+    private final StringBuilder resultArray = new StringBuilder();
 
     public int getMinElementInArray(int[] array) {
         if (array.length == 1) {
@@ -69,7 +69,7 @@ public class Arrays {
         }
         if (array.length < 2) {
             return 0;
-            }
+        }
         int index, sum;
         for (index = 0, sum = 0; index < array.length; index++) {
             if (array[index] % 2 != 0) {

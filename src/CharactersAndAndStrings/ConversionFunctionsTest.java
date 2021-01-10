@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ConversionFunctionsTest {
-    ConversionFunctions conversionFunctions = new ConversionFunctions();
+    private final ConversionFunctions conversionFunctions = new ConversionFunctions();
 
     static Stream<Arguments> intTest_NOMINAL() {
         return Stream.of(

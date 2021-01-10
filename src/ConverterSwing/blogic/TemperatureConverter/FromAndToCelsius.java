@@ -8,33 +8,33 @@ import java.util.Locale;
 import static ConverterSwing.Utils.Constants.Temperature;
 
 public class FromAndToCelsius implements IConverter {
-    double valueInCelsius;
+    private double valueInCelsius;
 
-    public void convertSomethingToStandard(String cmd1, double Value) {
+    public void convertSomethingToStandard(String cmd1, double value) {
         switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Temperature.CELSIUS:
-                valueInCelsius = Value;
+                valueInCelsius = value;
                 break;
             case Temperature.KELVIN:
-                valueInCelsius = Value - 273.15;
+                valueInCelsius = value - 273.15;
                 break;
             case Temperature.FAHRENHEIT:
-                valueInCelsius = (Value - 32) / 1.8;
+                valueInCelsius = (value - 32) / 1.8;
                 break;
             case Temperature.REAUMUR:
-                valueInCelsius = Value / 0.8;
+                valueInCelsius = value / 0.8;
                 break;
             case Temperature.ROMER:
-                valueInCelsius = (40.0 / 21) * (Value - 7.5);
+                valueInCelsius = (40.0 / 21) * (value - 7.5);
                 break;
             case Temperature.RANKIN:
-                valueInCelsius = (Value - 491.67) * (5.0 / 9);
+                valueInCelsius = (value - 491.67) * (5.0 / 9);
                 break;
             case Temperature.NEWTON:
-                valueInCelsius = (100.0 / 33) * Value;
+                valueInCelsius = (100.0 / 33) * value;
                 break;
             case Temperature.DELISLE:
-                valueInCelsius = (100 + Value) * (2.0 / 3);
+                valueInCelsius = (100 + value) * (2.0 / 3);
                 break;
             default:
                 throw new InputMismatchException("Вы неправильно ввели первую размерность");

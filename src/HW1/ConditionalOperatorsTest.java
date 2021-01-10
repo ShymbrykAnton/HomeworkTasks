@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 public class ConditionalOperatorsTest {
-    ConditionalOperators conditionalOperators = new ConditionalOperators();
+    private final ConditionalOperators conditionalOperators = new ConditionalOperators();
 
     static Stream<Arguments> getSumOrMultiplyTest_NOMINAL() {
         return Stream.of(

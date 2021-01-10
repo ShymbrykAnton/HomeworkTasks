@@ -2,7 +2,7 @@ package CharactersAndAndStrings;
 
 public class CharactersInOneString {
     private int count;
-    String resultStr = "";
+    private String resultStr = "";
 
     public String getEnglishAlphabetFromAToZ() {
         for (count = 0; count < 26; count++) {

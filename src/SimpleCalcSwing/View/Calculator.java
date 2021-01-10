@@ -9,8 +9,6 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class Calculator {
-    //TODO разобраться с native Math.pow
-    //Выводы сообщений в результат, если одно из трех полей ввода пустое, дефолт не пашет
 
     public Calculator() {
         JFrame frame = new JFrame("Калькулятор");

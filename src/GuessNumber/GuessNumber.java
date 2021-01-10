@@ -6,23 +6,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-    Random random = new Random();
-    Scanner scanner = new Scanner(System.in);
-    int randomValue;
-    int tryingGuess;
-    String userCommand;
-    int tryNumber;
-    int min;
-    int max;
+    private final Random random = new Random();
+    private final Scanner scanner = new Scanner(System.in);
+    private int randomValue;
+    private int tryingGuess;
+    private String userCommand;
+    private final int tryNumber;
+    private final int min;
+    private final int max;
 
     public GuessNumber(int tryNumber, int min, int max) {
         this.tryNumber = tryNumber;
         this.min = min;
         this.max = max;
-    }
-
-
-    public void start() {
         if (min > 200 || min < 1) {
             System.out.println("Задано некоректное значение начала диапазона (Коректное: от 1 до 200)");
             System.exit(0);
@@ -35,13 +31,16 @@ public class GuessNumber {
             System.out.println("Задано некоректное значение количества возможных попыток (Коректное: от 1 до 15)");
             System.exit(0);
         }
+    }
+
+
+    public void start() {
         System.out.println("Привет, я загадал число от " + min + " до " + max + ". Попробуй угадать его за " + tryNumber + " попыток! Удачи)");
         generateNumber();
     }
 
     public void generateNumber() {
         randomValue = random.nextInt((max - min) + 1) + min;
-        System.out.println(randomValue);
         System.out.println("Число было сгенерировано. Можешь начинать угадывать его). В любой момент при вводе комманды \"exit\" программа завершит свою работу ");
         guessNumber();
     }

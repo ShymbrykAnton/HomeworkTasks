@@ -8,33 +8,33 @@ import java.util.Locale;
 import static ConverterSwing.Utils.Constants.Volume;
 
 public class FromAndToLiters implements IConverter {
-    double valueInLiters;
+    private double valueInLiters;
 
-    public void convertSomethingToStandard(String cmd1, double Value) {
+    public void convertSomethingToStandard(String cmd1, double value) {
         switch (cmd1.toLowerCase(Locale.ROOT).trim()) {
             case Volume.LITERS:
-                valueInLiters = Value;
+                valueInLiters = value;
                 break;
             case Volume.M3:
-                valueInLiters = Value * 1000;
+                valueInLiters = value * 1000;
                 break;
             case Volume.GALLON:
-                valueInLiters = Value * 3.78541178;
+                valueInLiters = value * 3.78541178;
                 break;
             case Volume.PINT:
-                valueInLiters = Value * 0.473176473;
+                valueInLiters = value * 0.473176473;
                 break;
             case Volume.QUART:
-                valueInLiters = Value * 0.946352946;
+                valueInLiters = value * 0.946352946;
                 break;
             case Volume.BARREL:
-                valueInLiters = Value * 117.347765;
+                valueInLiters = value * 117.347765;
                 break;
             case Volume.CUBIC_FOOT:
-                valueInLiters = Value * 28.32;
+                valueInLiters = value * 28.32;
                 break;
             case Volume.CUBIC_INCH:
-                valueInLiters = Value * 0.016387064;
+                valueInLiters = value * 0.016387064;
                 break;
             default:
                 throw new InputMismatchException("Вы неправильно ввели первую размерность");

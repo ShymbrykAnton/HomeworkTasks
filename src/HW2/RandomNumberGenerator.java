@@ -3,7 +3,7 @@ package HW2;
 import java.util.Random;
 
 public class RandomNumberGenerator {
-    Random random = new Random();
+    private final Random random = new Random();
 
     public void getRandomValue() {
         int randomValue;
