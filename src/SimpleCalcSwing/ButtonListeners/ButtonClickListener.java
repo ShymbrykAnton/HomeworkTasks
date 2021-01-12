@@ -1,11 +1,15 @@
 package SimpleCalcSwing.ButtonListeners;
 
 import SimpleCalcSwing.Blogic.Math.Calculations;
+import SimpleCalcSwing.Utils.Constants;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Locale;
+
+import static SimpleCalcSwing.Utils.Constants.ErrorText.INPUT_MISMATCH;
+import static SimpleCalcSwing.Utils.Constants.Operation;
 
 public class ButtonClickListener implements ActionListener {
 
@@ -26,7 +30,6 @@ public class ButtonClickListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        final String ERROR_TEXT = "Неправильно введенная операция или число";
         double number1 = Double.parseDouble(textFieldNumber1.getText());
         double number2 = Double.parseDouble(textFieldNumber2.getText());
         String operation = textFieldOperation.getText();
@@ -34,26 +37,26 @@ public class ButtonClickListener implements ActionListener {
         double result = 0;
         try {
             switch (operation) {
-                case "+":
+                case Operation.PLUS:
                     result = calculations.getSum(number1, number2);
                     break;
-                case "-":
+                case Operation.MINUS:
                     result = calculations.getDifference(number1, number2);
                     break;
-                case "*":
+                case Operation.MULTIPLY:
                     result = calculations.getMultiply(number1, number2);
                     break;
-                case "/":
+                case Operation.DIVISION:
                     result = calculations.getDivision(number1, number2);
                     break;
-                case "root":
+                case Operation.ROOT:
                     result = calculations.getRoot(number1, number2);
                     break;
-                case "pow":
+                case Operation.POW:
                     result = calculations.getPow(number1, number2);
                     break;
                 default:
-                    textAreaResult.setText(ERROR_TEXT);
+                    textAreaResult.setText(INPUT_MISMATCH);
                     break;
             }
         } catch (ArithmeticException exception) {

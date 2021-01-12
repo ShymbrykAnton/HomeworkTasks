@@ -42,8 +42,8 @@ public class MainButtonClickListener implements ActionListener {
         try {
             iConverter.convertSomethingToStandard(convertFrom, value);
             String result = String.valueOf(iConverter.convertStandardToSomething(convertTo));
-            textAreaResult.setText("  Выбранная категория: " + category + ".\n" +
-                    "  " + value + " " + convertFrom + " = " + result + " " + convertTo + ".");
+            textAreaResult.setText(String.format(" Выбранная категория: %s.\n %s %s = %s %s ",
+                    category, value, convertFrom, result, convertTo));
         } catch (InputMismatchException exception) {
             textAreaResult.setText(exception.getMessage());
         }

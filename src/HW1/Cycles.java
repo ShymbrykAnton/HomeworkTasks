@@ -1,6 +1,9 @@
 package HW1;
 
 public class Cycles {
+    private final String IMPOSSIBLE_TO_GET_ROOT = "Число отрицательное или из него невозможно извлечь целочисленный корень";
+    private final String YOUR_ROOT = "Корень вашего числа:";
+
     public String getEvenSumNumber(int count) {
         if (count < 1 || count > 99) {
             return "Ваше число выходит за рамки допустимого диапазона [1-99]";
@@ -10,7 +13,7 @@ public class Cycles {
                 number += 1;
                 summa += i;
             }
-            return "Колличество четных чисел: " + number + "\nСумма четных чисел: " + summa;
+            return String.format("Колличество четных чисел: %s\nСумма четных чисел: %s", number, summa);
         }
     }
 
@@ -29,34 +32,34 @@ public class Cycles {
 
     public String getSquareRootSequence(int number) {
         if (number < 0) {
-            return "Невозможно извлечь корень из отрицательного числа";
+            return IMPOSSIBLE_TO_GET_ROOT;
         }
         int i;
         for (i = 0; i <= number; i++) {
             if (number == i * i) {
-                return "Корень вашего числа: " + i;
+                return String.format("%s %s", YOUR_ROOT, i);
             }
         }
-        return "Из числа невозможно извлечь целочисленный корень";
+        return IMPOSSIBLE_TO_GET_ROOT;
     }
 
     public String getSquareRootBinary(int number) {
         if (number < 0) {
-            return "Невозможно извлечь корень из отрицательного числа";
+            return IMPOSSIBLE_TO_GET_ROOT;
         }
         if (number == 0 || number == 1) {
-            return "Корень вашего числа: " + number;
+            return String.format("%s %s", YOUR_ROOT, number);
         }
         int i, k, end, mid, start;
         for (i = 0, start = 1, end = number / 2, mid = start + (end - start) / 2, k = mid; i <= mid || k <= end; i++, k++) {
             if (number == i * i) {
-                return "Корень вашего числа: " + i;
+                return String.format("%s %s", YOUR_ROOT, i);
             }
             if (number == k * k) {
-                return "Корень вашего числа: " + k;
+                return String.format("%s %s", YOUR_ROOT, k);
             }
         }
-        return "Из числа невозможно извлечь целочисленный корень";
+        return IMPOSSIBLE_TO_GET_ROOT;
     }
 
     public String getFactorial(int number) {
@@ -67,7 +70,7 @@ public class Cycles {
         for (i = 1, result = 1; i <= number; i++) {
             result *= i;
         }
-        return "Факториал числа " + number + ": " + result;
+        return String.format("Факториал числа %s: %s", number, result);
     }
 
     public int getNumeralSum(int number) {

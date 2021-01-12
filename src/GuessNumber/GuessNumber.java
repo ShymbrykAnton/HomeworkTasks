@@ -5,6 +5,8 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+import static GuessNumber.Utils.*;
+
 public class GuessNumber {
     private final Random random = new Random();
     private final Scanner scanner = new Scanner(System.in);
@@ -20,28 +22,28 @@ public class GuessNumber {
         this.min = min;
         this.max = max;
         if (min > 200 || min < 1) {
-            System.out.println("Задано некоректное значение начала диапазона (Коректное: от 1 до 200)");
+            System.out.println(INCORRECT_VALUE);
             System.exit(0);
         }
         if (max < min || max > 200) {
-            System.out.println("Задано некоректное значение конца диапазона (Коректное: от начала диапазона до 200)");
+            System.out.println(INCORRECT_VALUE);
             System.exit(0);
         }
         if (tryNumber < 1 || tryNumber > 15) {
-            System.out.println("Задано некоректное значение количества возможных попыток (Коректное: от 1 до 15)");
+            System.out.println(INCORRECT_VALUE);
             System.exit(0);
         }
     }
 
 
     public void start() {
-        System.out.println("Привет, я загадал число от " + min + " до " + max + ". Попробуй угадать его за " + tryNumber + " попыток! Удачи)");
+        System.out.printf("Привет, я загадал число от %s до %s. Попробуй угадать его за %s попыток! Удачи:)\n",min,max,tryNumber);
         generateNumber();
     }
 
     public void generateNumber() {
         randomValue = random.nextInt((max - min) + 1) + min;
-        System.out.println("Число было сгенерировано. Можешь начинать угадывать его). В любой момент при вводе комманды \"exit\" программа завершит свою работу ");
+        System.out.println("Число было сгенерировано. Можешь начинать угадывать его. В любой момент при вводе комманды \"exit\" программа завершит свою работу ");
         guessNumber();
     }
 
@@ -55,24 +57,24 @@ public class GuessNumber {
                 if (userCommand.equalsIgnoreCase("exit")) {
                     exit();
                 } else {
-                    System.out.println("Некоректная комманда");
+                    System.out.println(INCORRECT_COMMAND);
                     continue;
                 }
             }
-            if (tryingGuess == randomValue) {
+            if (tryingGuess < min || tryingGuess > max) {
+                System.out.printf("Ты же сам задал диапазон от %s до %s. Так зачем ты за него выходишь? Минус одна попытка :(\n", min, max);
+            } else if (tryingGuess == randomValue) {
                 System.out.println("Поздравляю, вы угадали число за " + (tryCounter + 1) + " попыток.");
                 exit();
-            }
-            if (tryCounter == 0) {
-                System.out.println("Не угадал, попробуй ещё");
-            }
-            if (tryCounter >= 1) {
+            } else if (tryCounter == 0) {
+                System.out.printf("Не угадал%s", TRY_AGAIN);
+            } else {
                 if (tryingGuess >= randomValue - 5 && tryingGuess <= randomValue + 5) {
-                    System.out.println("Жарко, попробуй ещё");
+                    System.out.printf("Жарко%s", TRY_AGAIN);
                 } else if (tryingGuess >= randomValue - 15 && tryingGuess <= randomValue + 15) {
-                    System.out.println("Тепло, попробуй ещё");
+                    System.out.printf("Тепло%s", TRY_AGAIN);
                 } else if (tryingGuess <= randomValue - 16 || tryingGuess >= randomValue + 16) {
-                    System.out.println("Холодно, попробуй ещё");
+                    System.out.printf("Холодно%s", TRY_AGAIN);
                 }
             }
             if (tryCounter == tryNumber - 1) {
@@ -94,7 +96,7 @@ public class GuessNumber {
                 start();
                 break;
             default:
-                System.out.println("Комманда была введена неправильно, попробуйте ещё раз");
+                System.out.println(INCORRECT_COMMAND);
                 exit();
                 break;
         }

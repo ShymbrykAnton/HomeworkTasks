@@ -1,5 +1,7 @@
 package SimpleCalcSwing.Blogic.Math;
 
+import static SimpleCalcSwing.Utils.Constants.ErrorText.DIVISION_ON_0;
+
 public class Calculations {
     public double getSum(double number1, double number2) {
         return number1 + number2;
@@ -15,7 +17,7 @@ public class Calculations {
 
     public double getDivision(double number1, double number2) {
         if (number2 == 0) {
-            throw new ArithmeticException("На ноль делить нельзя");
+            throw new ArithmeticException(DIVISION_ON_0);
         }
         return number1 / number2;
     }

@@ -3,45 +3,45 @@ package HW1;
 public class ConditionalOperators {
     public String getSumOrMultiply(int a, int b) {
         if (a == 0) {
-            return "Число а = 0: " + 0;
+            return "Число а = 0: 0";
         }
         if (a % 2 == 0) {
-            return "Число а - четное: " + (a * b);
+            return String.format("Число а - четное: %s", (a * b));
         }
-        return "Число а - нечетное: " + (a + b);
+        return String.format("Число а - нечетное: %s", (a + b));
     }
 
     public String findQuarterByCoordinates(int x, int y) {
-        String formal = "Точка принадлежит следующим(ей) четвертям(и): ";
+        final String formal = "Точка принадлежит следующим(ей) четвертям(и):";
         if (x > 0) {
             if (y > 0) {
-                return formal + "первой";
+                return String.format("%s первой",formal);
             }
             if (y < 0) {
-                return formal + "четвертой";
+                return String.format("%s четвертой",formal);
             }
         }
         if (x < 0) {
             if (y > 0) {
-                return formal + "второй";
+                return String.format("%s второй",formal);
             }
             if (y < 0) {
-                return formal + "третьей";
+                return String.format("%s третьей",formal);
             }
         }
         if (x == 0) {
             if (y > 0) {
-                return formal + "первой и второй";
+                return String.format("%s первой и второй",formal);
             }
             if (y < 0) {
-                return formal + "третьей и четвертой";
+                return String.format("%s третьей и четвертой",formal);
             }
         }
         if (x > 0) {
-            return formal + "первой и четвертой";
+            return String.format("%s первой и четвертой",formal);
         }
         if (x < 0) {
-            return formal + "второй и третьей";
+            return String.format("%s второй и третьей",formal);
         }
         return "Точка лежит в начале координат";
     }

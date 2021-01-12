@@ -1,12 +1,12 @@
 package HW1;
 
 public class Functions {
-    final String[] diapason20 = {"", "Один ", "Два ", "Три ", "Четыре ", "Пять ", "Шесть ", "Семь ", "Восемь ", "Девять ",
+    private final String[] diapason20 = {"", "Один ", "Два ", "Три ", "Четыре ", "Пять ", "Шесть ", "Семь ", "Восемь ", "Девять ",
             "Десять ", "Одиннадцать ", "Двенадцать ", "Тринадцать ", "Четырнадцать ", "Пятнадцать ", "Шестнадцать ",
             "Семнадцать ", "Восемнадцать ", "Девятнадцать "};
-    String[] diapason100 = {"", "", "Двадцать ", "Тридцать ", "Сорок ", "Пятьдесят ", "Шестьдесят ", "Семьдесят ",
+    private final String[] diapason100 = {"", "", "Двадцать ", "Тридцать ", "Сорок ", "Пятьдесят ", "Шестьдесят ", "Семьдесят ",
             "Восемьдесят ", "Девяносто "};
-    String[] diapason1000 = {"", "Сто ", "Двести ", "Триста ", "Четыреста ", "Пятьсот ",
+    private final String[] diapason1000 = {"", "Сто ", "Двести ", "Триста ", "Четыреста ", "Пятьсот ",
             "Шестьсот ", "Семьсот ", "Восемьсот ", "Девятьсот "};
     StringBuilder result = new StringBuilder();
     public String getStringFromNumber(int number) {
@@ -33,14 +33,12 @@ public class Functions {
                 }
             }
         }
-        if (thirdNumber < 20) {
-            if (number % 100 < 20) {
-                thirdNumber = number % 100;
-            }
-            for (numberInStringArray = 1; numberInStringArray < 20; numberInStringArray++) {
-                if (numberInStringArray == thirdNumber) {
-                    result.append(diapason20[numberInStringArray]);
-                }
+        if (number % 100 < 20) {
+            thirdNumber = number % 100;
+        }
+        for (numberInStringArray = 1; numberInStringArray < 20; numberInStringArray++) {
+            if (numberInStringArray == thirdNumber) {
+                result.append(diapason20[numberInStringArray]);
             }
         }
         return (result.toString()).trim();

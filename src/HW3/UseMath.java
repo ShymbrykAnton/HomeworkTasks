@@ -8,31 +8,32 @@ public class UseMath {
 
     public String getFlightDistanceByDegree(double speed, double angle) {
         if (speed < 0 || angle < 0) {
-            System.out.println("Скорость и угол наклона ствола должны быть положительны");
+            System.out.println("Скорость и угол наклона ствола должны быть положительны.");
             System.exit(0);
         }
         speed *= (1000.0 / 3600);
         double flightDistance = (Math.pow(speed, 2) / G) * Math.sin(Math.toRadians(2 * angle));
         speed *= (3600 / 1000.0);
         String result = new DecimalFormat(C).format(flightDistance);
-        return "Расстояние полёта снаряда при скорости: " + speed + " км/ч и угле наклона ствола: " + angle + " градусов равно: " + result + " метров";
+        return String.format("Расстояние полёта снаряда при скорости: %s км/ч и угле наклона ствола: %s градусов равно: %s метров.", speed, angle, result);
     }
 
     public String getFlightDistanceByRadians(double speed, double angle) {
         if (speed < 0 || angle < 0) {
-            System.out.println("Скорость и угол наклона ствола должны быть положительны");
+            System.out.println("Скорость и угол наклона ствола должны быть положительны.");
             System.exit(0);
         }
         speed *= (1000.0 / 3600);
         double flightDistance = (Math.pow(speed, 2) / G) * Math.sin(2 * angle);
         speed *= (3600 / 1000.0);
         String result = new DecimalFormat(C).format(flightDistance);
-        return "Расстояние полёта снаряда при скорости: " + speed + " км/ч и угле наклона ствола: " + angle + " радианов равно: " + result + " метров";
+        return String.format("Расстояние полёта снаряда при скорости: %s км/ч и угле наклона ствола: %s радианов равно: %s метров.", speed, angle, result);
     }
 
     public String getDistanceBetweenCars(double firstCarSpeed, double secondCarSpeed, double time, double startDistance) {
         double distance = Math.abs((firstCarSpeed + secondCarSpeed) * time + startDistance);
-        return "Расстояние между машинами, при скорости первой и второй машины: " + firstCarSpeed + " и " + secondCarSpeed + " км/ч и начальном расстоянии между ними: " + startDistance + " км через " + time + " часов равно " + distance + " км";
+        return String.format("Расстояние между машинами, при скорости первой и второй машины: %s и %s км/ч и начальном расстоянии между ними: %s км через %s часов равно %s км."
+                , firstCarSpeed, secondCarSpeed, startDistance, time, distance);
     }
 
     private double area(double x1, double y1, double x2, double y2, double x3, double y3) {
@@ -62,6 +63,6 @@ public class UseMath {
         firstPart = upPart / downPart;
         secondPart = Math.abs(Math.cos(Math.toDegrees(x)) / Math.exp(Math.sin(Math.toDegrees(x))));
         result = firstPart + secondPart;
-        return "Результат вычисления выражения: " + result;
+        return String.format("Результат вычисления выражения: %s.", result);
     }
 }

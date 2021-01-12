@@ -39,7 +39,7 @@ public class Main {
 //        guessNumber.start();
 
 //        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-//        randomNumberGenerator.getRandomValue();
+//        randomNumberGenerator.getTenTimesRandomValues();
 //
 //        DrawingStars drawingStars = new DrawingStars();
 //        drawingStars.drawEmptySquare();
@@ -47,12 +47,10 @@ public class Main {
 //        drawingStars.drawSquare();
 //
 //        UseMath useMath = new UseMath();
-//        String result = useMath.calculateExpression(25);
+//        String result = useMath.getDistanceBetweenCars(10,5,10,-5);
 //        System.out.println(result);
-//        Functions functions = new Functions();
-//        functions.getStringFromNumber(23);
 //
-//        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator();
 //
 //        CharactersInOneString charactersInOneString = new CharactersInOneString();
 //        String result5 = charactersInOneString.getNumbersFrom0to9();
