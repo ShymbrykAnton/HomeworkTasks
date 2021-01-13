@@ -42,8 +42,8 @@ public class Cycles {
         }
         return IMPOSSIBLE_TO_GET_ROOT;
     }
-
-    public String getSquareRootBinary(int number) {
+//TODO binarySearch
+        public String getSquareRootBinary(int number) {
         if (number < 0) {
             return IMPOSSIBLE_TO_GET_ROOT;
         }
@@ -61,6 +61,30 @@ public class Cycles {
         }
         return IMPOSSIBLE_TO_GET_ROOT;
     }
+//    public String getSquareRootBinary(int number) {
+//        if (number < 0) {
+//            return IMPOSSIBLE_TO_GET_ROOT;
+//        }
+//        if (number == 0 || number == 1) {
+//            return String.format("%s %s", YOUR_ROOT, number);
+//        }
+//        int end, mid, start;
+//        start = 1;
+//        end = number / 2;
+//        mid = start + (end - start) / 2;
+//        for (; mid*mid!=number|| start<3 ; mid = start + ((start - end) / 2)) {
+//            if (mid * mid < number) {
+//                end = mid;
+//            }
+//            if (mid * mid > number) {
+//                start = mid;
+//            }
+//        }
+//        if (mid * mid == number) {
+//                return String.format("%s %s", YOUR_ROOT, mid);
+//            }
+//        return IMPOSSIBLE_TO_GET_ROOT;
+//    }
 
     public String getFactorial(int number) {
         if (number < 0) {

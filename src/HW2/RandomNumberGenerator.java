@@ -8,14 +8,14 @@ public class RandomNumberGenerator {
 
     public void getRandomValue() {
         int randomValue;
-        randomValue = random.nextInt((100 - 1) + 1) + 1;
+        randomValue = random.nextInt();
         System.out.println("Случайное число: " + randomValue);
     }
 
     public void getTenTimesRandomValues() {
         int randomValue, count;
         for (count = 0; count < 10; count++) {
-            randomValue = random.nextInt((100 - 1) + 1) + 1;
+            randomValue = random.nextInt();
             System.out.printf(RANDOM_COUNT_NUMBER, count + 1, randomValue);
         }
     }
@@ -47,7 +47,7 @@ public class RandomNumberGenerator {
 
     public void getRandomTimesRandomValues() {
         int randomValue, numberOfRandomNumbers, count;
-        numberOfRandomNumbers = random.nextInt((10 - 3) + 1) + 3;
+        numberOfRandomNumbers = random.nextInt((15 - 3) + 1) + 3;
         for (count = 0; count < numberOfRandomNumbers; count++) {
             randomValue = random.nextInt((45) + 1);
             randomValue -= 10;

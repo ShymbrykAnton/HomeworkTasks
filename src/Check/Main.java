@@ -39,7 +39,11 @@ public class Main {
 //        guessNumber.start();
 
 //        RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-//        randomNumberGenerator.getTenTimesRandomValues();
+//        randomNumberGenerator.getRandomTimesRandomValues();
+        double a = 128;
+        byte b = (byte) a;
+        String dd = "11144565465151511";
+        System.out.println(dd.indexOf('4'));
 //
 //        DrawingStars drawingStars = new DrawingStars();
 //        drawingStars.drawEmptySquare();
@@ -50,7 +54,7 @@ public class Main {
 //        String result = useMath.getDistanceBetweenCars(10,5,10,-5);
 //        System.out.println(result);
 //
-        Calculator calculator = new Calculator();
+//        Calculator calculator = new Calculator();
 //
 //        CharactersInOneString charactersInOneString = new CharactersInOneString();
 //        String result5 = charactersInOneString.getNumbersFrom0to9();
